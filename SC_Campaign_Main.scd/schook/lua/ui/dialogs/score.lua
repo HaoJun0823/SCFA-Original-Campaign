@@ -912,23 +912,30 @@ local function CreateSCCampaignScoreScreen(victory, operationVictoryTable)
         LayoutHelpers.AtLeftTopIn(medalLabel, medalGroup, 0, 0)
 
         -- mission (bottom), difficulty (middle), award (top), stacked via AtCenterIn.
-        local medalBottom = Bitmap(medalGroup)
-        medalBottom:SetTexture(medals.mission)
-        medalBottom.Width:Set(medalW)
-        medalBottom.Height:Set(medalH)
-        LayoutHelpers.CenteredBelow(medalBottom, medalLabel)
+        -- IMPORTANT: only build a layer whose texture actually resolved.
+        -- GetMedalBitmaps() omits result.award whenever awardType == 'p'
+        -- (primary objectives only), because SC ships no medal-*-p_bmp.dds.
+        -- Calling SetTexture(nil) raises "attempting to set a LazyVar's
+        -- evaluation function to nil" from lazyvar.lua, which aborts the rest
+        -- of CreateSCCampaignScoreScreen. Guard every layer individually.
+        local layers = {}
+        if medals.mission then table.insert(layers, medals.mission) end
+        if medals.difficulty then table.insert(layers, medals.difficulty) end
+        if medals.award then table.insert(layers, medals.award) end
 
-        local medalMiddle = Bitmap(medalGroup)
-        medalMiddle:SetTexture(medals.difficulty)
-        medalMiddle.Width:Set(medalW)
-        medalMiddle.Height:Set(medalH)
-        LayoutHelpers.AtCenterIn(medalMiddle, medalBottom)
-
-        local medalTop = Bitmap(medalGroup)
-        medalTop:SetTexture(medals.award)
-        medalTop.Width:Set(medalW)
-        medalTop.Height:Set(medalH)
-        LayoutHelpers.AtCenterIn(medalTop, medalMiddle)
+        local prevLayer = false
+        for _, tex in ipairs(layers) do
+            local bmp = Bitmap(medalGroup)
+            bmp:SetTexture(tex)
+            bmp.Width:Set(medalW)
+            bmp.Height:Set(medalH)
+            if prevLayer then
+                LayoutHelpers.AtCenterIn(bmp, prevLayer)
+            else
+                LayoutHelpers.CenteredBelow(bmp, medalLabel)
+            end
+            prevLayer = bmp
+        end
 
         medalGroup.Height:Set(medalLabel.Height() + medalH + 10)
     end
