@@ -55,9 +55,14 @@ local function TextureExists(path)
     return DiskGetFileInfo(path)
 end
 
--- Format game time as HH:MM:SS
+-- Format game time - GetGameTime() returns a formatted string like "0h01m21s"
 local function FormatGameTime()
-    local seconds = math.floor(GetGameTime())
+    local t = GetGameTime()
+    if type(t) == 'string' then
+        return t
+    end
+    -- Fallback: format as HH:MM:SS if it's a number
+    local seconds = math.floor(tonumber(t) or 0)
     local hours = math.floor(seconds / 3600)
     local mins = math.floor(math.mod(seconds, 3600) / 60)
     local secs = math.mod(seconds, 60)
@@ -534,7 +539,7 @@ local function CreateSCCampaignScoreScreen(victory, operationVictoryTable)
             medalGroup.Height:Set(125)
             medalGroup.Width:Set(430)
 
-            local medalTitle = UIUtil.CreateText(medalGroup, LOC("<LOC SCORE_0042>Medals"), 14, UIUtil.bodyFont)
+            local medalTitle = UIUtil.CreateText(medalGroup, LOC("<LOC SCORE_0057>Medals"), 14, UIUtil.bodyFont)
             LayoutHelpers.AtLeftTopIn(medalTitle, medalGroup, 15, 8)
 
             -- Display medals horizontally
