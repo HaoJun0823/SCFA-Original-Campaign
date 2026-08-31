@@ -1,3 +1,14 @@
+---
+AIGC:
+  ContentProducer: '001191110102MAD55U9H0F10002'
+  ContentPropagator: '001191110102MAD55U9H0F10002'
+  Label: '1'
+  ProduceID: '9f4be316-a369-4316-8e7d-c36d68ecb270'
+  PropagateID: '9f4be316-a369-4316-8e7d-c36d68ecb270'
+  ReservedCode1: 'a2cf161f-84ad-4e88-bd9d-e5406e288d8a'
+  ReservedCode2: 'a2cf161f-84ad-4e88-bd9d-e5406e288d8a'
+---
+
 # SCFA — Original Campaign
 
 Bring the original **Supreme Commander (2007)** single-player campaign into
@@ -72,23 +83,27 @@ Clone this repository (or download the release). The two required folders are:
 - `SC_Campaign_Main.scd`
 - `SC_Campaign_Main_Localization.scd`
 
-### 2. Copy the data folders
+### 2. Download the data folders
 
-The following **data folders are intentionally not shipped** — copy them from a
-Supreme Commander (2007) install, or make them empty:
+The following **data folders are not shipped in this repository** —
+download them from [Nexus Mods](https://www.nexusmods.com/games/supremecommanderforgedalliance/mods/14)
+and place them alongside the two source folders above:
 
 - `SC_Campaign_Data_Movie.scd`
 - `SC_Campaign_Data_Music.scd`
 - `SC_Campaign_Data_Sound.scd`
 - `SC_Campaign_Data_Voice_[loc].scd`
 
-> **Hint** — if you own the original game you do **not** need to download the
-> movies:
+> **Hint** — for `SC_Campaign_Data_Movie.scd` only, if you own the original
+> *Supreme Commander (2007)* you can copy the movie files directly instead of
+> downloading:
 >
 > 1. Open the DLC game folder `Supreme Commander Forged Alliance\gamedata`.
 > 2. Create a folder `SC_Campaign_Data_Movie.scd`.
 > 3. Open the original game folder `Supreme Commander\`.
 > 4. Copy `Supreme Commander\movies` → `...\gamedata\SC_Campaign_Data_Movie.scd\movies`.
+>
+> The other three data folders must still be downloaded from Nexus Mods.
 
 ### 3. Enable the mod
 

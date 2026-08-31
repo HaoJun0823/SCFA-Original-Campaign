@@ -1,3 +1,14 @@
+---
+AIGC:
+  ContentProducer: '001191110102MAD55U9H0F10002'
+  ContentPropagator: '001191110102MAD55U9H0F10002'
+  Label: '1'
+  ProduceID: 'b5a023fa-256c-4e2d-86ac-e1d0d071b521'
+  PropagateID: 'b5a023fa-256c-4e2d-86ac-e1d0d071b521'
+  ReservedCode1: '931228bf-a286-4327-bbab-23f2d99344dc'
+  ReservedCode2: '931228bf-a286-4327-bbab-23f2d99344dc'
+---
+
 # SCFA — 原版战役移植
 
 将 2007 年原版《最高指挥官》(Supreme Commander) 的单人战役移植到
@@ -56,9 +67,9 @@ SC_Campaign_Main.scd
 - `SC_Campaign_Main.scd`
 - `SC_Campaign_Main_Localization.scd`
 
-### 2. 复制数据文件夹
+### 2. 下载数据文件夹
 
-以下**数据文件夹不会随仓库提供**——请从《最高指挥官》(2007) 安装目录复制，或留空：
+以下**数据文件夹不随仓库提供**——请从 [Nexus Mods](https://www.nexusmods.com/games/supremecommanderforgedalliance/mods/14) 下载，放到与上面两个源码文件夹相同的目录下：
 
 ```
 SC_Campaign_Data_Movie.scd
@@ -67,12 +78,14 @@ SC_Campaign_Data_Sound.scd
 SC_Campaign_Data_Voice_[loc].scd
 ```
 
-> **提示** —— 如果你有原版游戏，就**不需要下载电影**：
+> **提示** —— 仅 `SC_Campaign_Data_Movie.scd` 这一个，如果你有原版《最高指挥官》(2007)，可以直接拷贝电影文件而不用下载：
 >
 > 1. 打开 DLC 游戏文件夹 `Supreme Commander Forged Alliance\gamedata`。
 > 2. 新建文件夹 `SC_Campaign_Data_Movie.scd`。
 > 3. 打开原版游戏文件夹 `Supreme Commander\`。
 > 4. 将 `Supreme Commander\movies` 复制到 `...\gamedata\SC_Campaign_Data_Movie.scd\movies`。
+>
+> 其余三个数据文件夹仍须从 Nexus Mods 下载。
 
 ### 3. 启用 Mod
 
