@@ -1,0 +1,255 @@
+{
+  "bank_name": "FMV_BG",
+  "tool_version": 41,
+  "format_version": 46289,
+  "num_simple_cues": 8,
+  "num_complex_cues": 12,
+  "num_total_cues": 20,
+  "num_wave_banks": 1,
+  "num_sounds": 21,
+  "wave_banks": [
+    "FMV_BG"
+  ],
+  "cue_mappings": [
+    {
+      "cue_index": 0,
+      "cue_name": "FMV_Cybran_Outro_2",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 12
+        }
+      ]
+    },
+    {
+      "cue_index": 1,
+      "cue_name": "FMV_Cybran_Intro_1",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 13
+        }
+      ]
+    },
+    {
+      "cue_index": 2,
+      "cue_name": "FMV_Cybran_Intro_2",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 14
+        }
+      ]
+    },
+    {
+      "cue_index": 3,
+      "cue_name": "FMV_Cybran_Outro_1",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 15
+        }
+      ]
+    },
+    {
+      "cue_index": 4,
+      "cue_name": "FMV_UEF_Credits",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 16
+        }
+      ]
+    },
+    {
+      "cue_index": 5,
+      "cue_name": "FMV_Cybran_Credits",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 17
+        }
+      ]
+    },
+    {
+      "cue_index": 6,
+      "cue_name": "Menu_Credits",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 18
+        }
+      ]
+    },
+    {
+      "cue_index": 7,
+      "cue_name": "FMV_Aeon_Credits",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 19
+        }
+      ]
+    },
+    {
+      "cue_index": 8,
+      "cue_name": "THQ_Logo",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 1
+        }
+      ]
+    },
+    {
+      "cue_index": 9,
+      "cue_name": "GPG_introLogo_HD",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 0
+        }
+      ]
+    },
+    {
+      "cue_index": 10,
+      "cue_name": "NVIDIA",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 2
+        }
+      ]
+    },
+    {
+      "cue_index": 11,
+      "cue_name": "FMV_Aeon_Intro_1",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 3
+        }
+      ]
+    },
+    {
+      "cue_index": 12,
+      "cue_name": "FMV_Aeon_Intro_2",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 4
+        }
+      ]
+    },
+    {
+      "cue_index": 13,
+      "cue_name": "FMV_Aeon_Outro_1",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 5
+        }
+      ]
+    },
+    {
+      "cue_index": 14,
+      "cue_name": "FMV_Aeon_Outro_2",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 6
+        }
+      ]
+    },
+    {
+      "cue_index": 15,
+      "cue_name": "FMV_Campaign_Intro",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 7
+        }
+      ]
+    },
+    {
+      "cue_index": 16,
+      "cue_name": "FMV_UEF_Intro_1",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 8
+        }
+      ]
+    },
+    {
+      "cue_index": 17,
+      "cue_name": "FMV_UEF_Intro_2",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 9
+        }
+      ]
+    },
+    {
+      "cue_index": 18,
+      "cue_name": "FMV_UEF_Outro_1",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 10
+        }
+      ]
+    },
+    {
+      "cue_index": 19,
+      "cue_name": "FMV_UEF_Outro_2",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "FMV_BG",
+          "wave_bank_index": 0,
+          "wave_index": 11
+        }
+      ]
+    }
+  ]
+}

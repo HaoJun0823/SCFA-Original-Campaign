@@ -1,0 +1,2156 @@
+Signature = XACT2;
+Version = 17;
+Content Version = 43;
+
+Options
+{
+}
+
+Global Settings
+{
+    Xbox File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\.temp\build_fmv_bg\Xbox\SC_FMV_BG.xgs;
+    Windows File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\.temp\build_fmv_bg\Win\SC_FMV_BG.xgs;
+    Header File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\.temp\build_fmv_bg\SC_FMV_BG.h;
+    Exclude Category Names = 0;
+    Exclude Variable Names = 0;
+    Last Modified Low = 29832817;
+    Last Modified High = 2408622204;
+
+    Category
+    {
+        Name = Default;
+        Public = 1;
+        Background Music = 0;
+        Volume = 0;
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = FMV;
+        Public = 1;
+        Background Music = 0;
+        Volume = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Compression Preset
+    {
+        Name = ADPCM 128;
+        Xbox Format Tag = 357;
+        Target Sample Rate = 48000;
+        Quality = 60;
+        Find Best Quality = 0;
+        High Freq Cut = 0;
+        Loop = 0;
+        PC Format Tag = 2;
+        Samples Per Block = 128;
+    }
+}
+
+Wave Bank
+{
+    Name = SC_FMV_BG;
+    Xbox File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\.temp\build_fmv_bg\Xbox\SC_FMV_BG.xwb;
+    Windows File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\.temp\build_fmv_bg\Win\SC_FMV_BG.xwb;
+    Seek Tables = 1;
+    Compression Preset Name = ADPCM 128;
+
+    Wave
+    {
+        Name = GPG_introLogo_HD;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\GPG_introLogo_HD.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44110;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 862204;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = THQ_Logo;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\THQ_Logo.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44116;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 1203196;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = NVIDIA;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\NVIDIA.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44123;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 708604;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_Aeon_Intro_1;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_Aeon_Intro_1.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44099;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 24855548;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_Aeon_Intro_2;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_Aeon_Intro_2.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44099;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 3340796;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_Aeon_Outro_1;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_Aeon_Outro_1.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 14942200;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_Aeon_Outro_2;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_Aeon_Outro_2.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44098;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 2211836;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_Campaign_Intro;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_Campaign_Intro.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44099;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 32040956;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_UEF_Intro_1;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_UEF_Intro_1.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44099;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 14888956;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_UEF_Intro_2;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_UEF_Intro_2.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44098;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 2588156;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_UEF_Outro_1;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_UEF_Outro_1.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 15024632;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_UEF_Outro_2;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_UEF_Outro_2.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44101;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 2123772;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_Cybran_Outro_2;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_Cybran_Outro_2.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 4187644;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_Cybran_Intro_1;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_Cybran_Intro_1.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44099;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 25108476;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_Cybran_Intro_2;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_Cybran_Intro_2.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 5475324;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_Cybran_Outro_1;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_Cybran_Outro_1.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 21057532;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_UEF_Credits;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_UEF_Credits.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 52609532;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_Cybran_Credits;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_Cybran_Credits.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 52703232;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = Menu_Credits;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\Menu_Credits.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 52609532;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+    Wave
+    {
+        Name = FMV_Aeon_Credits;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\correct_extract\FMV_BG\pcm\FMV_Aeon_Credits.wav;
+        Build Settings Last Modified Low = 3129573016;
+        Build Settings Last Modified High = 29832812;
+        Compression Preset Name = ADPCM 128;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 52609532;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3129573016;
+            Last Modified High = 29832812;
+        }
+    }
+
+}
+
+Sound Bank
+{
+    Name = SC_FMV_BG;
+    Xbox File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\.temp\build_fmv_bg\Xbox\SC_FMV_BG.xsb;
+    Windows File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\.temp\build_fmv_bg\Win\SC_FMV_BG.xsb;
+
+    Sound
+    {
+        Name = FMV_Cybran_Outro_2;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_Cybran_Outro_2;
+                    Entry Index = 12;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = FMV_Cybran_Intro_1;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_Cybran_Intro_1;
+                    Entry Index = 13;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = FMV_Cybran_Intro_2;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_Cybran_Intro_2;
+                    Entry Index = 14;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = FMV_Cybran_Outro_1;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_Cybran_Outro_1;
+                    Entry Index = 15;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = FMV_UEF_Credits;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_UEF_Credits;
+                    Entry Index = 16;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = FMV_Cybran_Credits;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_Cybran_Credits;
+                    Entry Index = 17;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = Menu_Credits;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = Menu_Credits;
+                    Entry Index = 18;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = FMV_Aeon_Credits;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_Aeon_Credits;
+                    Entry Index = 19;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = THQ_Logo;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = THQ_Logo;
+                    Entry Index = 1;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = GPG_introLogo_HD;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = GPG_introLogo_HD;
+                    Entry Index = 0;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = NVIDIA;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = NVIDIA;
+                    Entry Index = 2;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = FMV_Aeon_Intro_1;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_Aeon_Intro_1;
+                    Entry Index = 3;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = FMV_Aeon_Intro_2;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_Aeon_Intro_2;
+                    Entry Index = 4;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = FMV_Aeon_Outro_1;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_Aeon_Outro_1;
+                    Entry Index = 5;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = FMV_Aeon_Outro_2;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_Aeon_Outro_2;
+                    Entry Index = 6;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = FMV_Campaign_Intro;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_Campaign_Intro;
+                    Entry Index = 7;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = FMV_UEF_Intro_1;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_UEF_Intro_1;
+                    Entry Index = 8;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = FMV_UEF_Intro_2;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_UEF_Intro_2;
+                    Entry Index = 9;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = FMV_UEF_Outro_1;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_UEF_Outro_1;
+                    Entry Index = 10;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = FMV_UEF_Outro_2;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = FMV;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 360.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_FMV_BG;
+                    Bank Index = 0;
+                    Entry Name = FMV_UEF_Outro_2;
+                    Entry Index = 11;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_Cybran_Outro_2;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_Cybran_Outro_2;
+            Index = 0;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_Cybran_Intro_1;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_Cybran_Intro_1;
+            Index = 1;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_Cybran_Intro_2;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_Cybran_Intro_2;
+            Index = 2;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_Cybran_Outro_1;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_Cybran_Outro_1;
+            Index = 3;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_UEF_Credits;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_UEF_Credits;
+            Index = 4;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_Cybran_Credits;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_Cybran_Credits;
+            Index = 5;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = Menu_Credits;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = Menu_Credits;
+            Index = 6;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_Aeon_Credits;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_Aeon_Credits;
+            Index = 7;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = THQ_Logo;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = THQ_Logo;
+            Index = 8;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = GPG_introLogo_HD;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = GPG_introLogo_HD;
+            Index = 9;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = NVIDIA;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = NVIDIA;
+            Index = 10;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_Aeon_Intro_1;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_Aeon_Intro_1;
+            Index = 11;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_Aeon_Intro_2;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_Aeon_Intro_2;
+            Index = 12;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_Aeon_Outro_1;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_Aeon_Outro_1;
+            Index = 13;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_Aeon_Outro_2;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_Aeon_Outro_2;
+            Index = 14;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_Campaign_Intro;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_Campaign_Intro;
+            Index = 15;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_UEF_Intro_1;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_UEF_Intro_1;
+            Index = 16;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_UEF_Intro_2;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_UEF_Intro_2;
+            Index = 17;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_UEF_Outro_1;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_UEF_Outro_1;
+            Index = 18;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = FMV_UEF_Outro_2;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = FMV_UEF_Outro_2;
+            Index = 19;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,3202 @@
+Signature = XACT2;
+Version = 17;
+Content Version = 43;
+Release = November 2007;
+
+Options
+{
+    Verbose Report = 0;
+    Generate C/C++ Headers = 1;
+}
+
+Global Settings
+{
+    Xbox File = Xbox\SupCom.xgs;
+    Windows File = Win\SupCom.xgs;
+    Header File = D:\work\rts\main\data\sounds\SupCom.h;
+    Exclude Category Names = 0;
+    Exclude Variable Names = 0;
+    Last Modified Low = 3921295702;
+    Last Modified High = 31001778;
+
+    Category
+    {
+        Name = Global;
+        Comment = was +2;
+        Public = 1;
+        Background Music = 0;
+        Volume = 600;
+
+        Category Entry
+        {
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Default;
+        Public = 1;
+        Background Music = 0;
+        Volume = -200;
+
+        Category Entry
+        {
+            Name = Global;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Music;
+        Comment = -2 9-30-06 12-7-06  was -5;
+        Public = 1;
+        Background Music = 1;
+        Volume = 0;
+
+        Category Entry
+        {
+            Name = Global;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 1;
+            Behavior = 2;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 200;
+                Crossfade Type = 1;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = World;
+        Comment = was 3;
+        Public = 1;
+        Background Music = 0;
+        Volume = 200;
+
+        Category Entry
+        {
+            Name = Global;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 200;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 100;
+                Crossfade Type = 1;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Units;
+        Public = 1;
+        Background Music = 0;
+        Volume = 0;
+
+        Category Entry
+        {
+            Name = World;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Ambient;
+        Public = 1;
+        Background Music = 0;
+        Volume = -200;
+
+        Category Entry
+        {
+            Name = World;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 1000;
+                Fade Out = 1000;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Weapons;
+        Public = 1;
+        Background Music = 0;
+        Volume = 0;
+
+        Category Entry
+        {
+            Name = World;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 150;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Destroy;
+        Comment = was 0;
+        Public = 1;
+        Background Music = 0;
+        Volume = 100;
+
+        Category Entry
+        {
+            Name = World;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 100;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Rumble;
+        Public = 1;
+        Background Music = 0;
+        Volume = 0;
+
+        Category Entry
+        {
+            Name = World;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Interface;
+        Public = 1;
+        Background Music = 0;
+        Volume = -500;
+
+        Category Entry
+        {
+            Name = Global;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsUEF;
+        Public = 1;
+        Background Music = 0;
+        Volume = -200;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsAEON;
+        Public = 1;
+        Background Music = 0;
+        Volume = -200;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsCYBRAN;
+        Public = 1;
+        Background Music = 0;
+        Volume = -200;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsUEFAir;
+        Comment = was -5;
+        Public = 1;
+        Background Music = 0;
+        Volume = -800;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsCYBRANAir;
+        Comment = was -3;
+        Public = 1;
+        Background Music = 0;
+        Volume = -600;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsAEONAir;
+        Public = 1;
+        Background Music = 0;
+        Volume = -400;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = ActiveLoopsUEF;
+        Comment = was -8;
+        Public = 1;
+        Background Music = 0;
+        Volume = -600;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = ActiveLoopsCYBRAN;
+        Comment = was -8;
+        Public = 1;
+        Background Music = 0;
+        Volume = -600;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = ActiveLoopsAEON;
+        Comment = was -8;
+        Public = 1;
+        Background Music = 0;
+        Volume = -600;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Unit Select;
+        Public = 1;
+        Background Music = 0;
+        Volume = 200;
+
+        Category Entry
+        {
+            Name = Interface;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = FMV;
+        Public = 1;
+        Background Music = 0;
+        Volume = -400;
+
+        Category Entry
+        {
+            Name = Global;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Op_Briefing;
+        Public = 1;
+        Background Music = 0;
+        Volume = 0;
+
+        Category Entry
+        {
+            Name = Global;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = VO;
+        Public = 1;
+        Background Music = 0;
+        Volume = 0;
+
+        Category Entry
+        {
+            Name = Global;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = US;
+        Comment = was -7;
+        Public = 1;
+        Background Music = 0;
+        Volume = -580;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = DE;
+        Comment = was -14 was -12;
+        Public = 1;
+        Background Music = 0;
+        Volume = -900;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = ES;
+        Comment = was -10.5;
+        Public = 1;
+        Background Music = 0;
+        Volume = -750;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = FR;
+        Comment = was -13;
+        Public = 1;
+        Background Music = 0;
+        Volume = -1000;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = IT;
+        Comment = was -11;
+        Public = 1;
+        Background Music = 0;
+        Volume = -900;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = RU;
+        Comment = was-10 was -8;
+        Public = 1;
+        Background Music = 0;
+        Volume = -700;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = PL;
+        Public = 1;
+        Background Music = 0;
+        Volume = -1000;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = CN;
+        Public = 1;
+        Background Music = 0;
+        Volume = -1000;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = CZ;
+        Public = 1;
+        Background Music = 0;
+        Volume = -1000;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = KR;
+        Public = 1;
+        Background Music = 0;
+        Volume = -1000;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Construction_Loops;
+        Comment = -5;
+        Public = 1;
+        Background Music = 0;
+        Volume = -300;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsSeraphimAir;
+        Comment = was -2;
+        Public = 1;
+        Background Music = 0;
+        Volume = 0;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsSeraphim;
+        Public = 1;
+        Background Music = 0;
+        Volume = -400;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = ActiveLoopsSeraphim;
+        Public = 1;
+        Background Music = 0;
+        Volume = -500;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = ConstructionSeraphim;
+        Public = 1;
+        Background Music = 0;
+        Volume = -500;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 30;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = SeraphimSea;
+        Comment = 10-3-07 was -4;
+        Public = 1;
+        Background Music = 0;
+        Volume = -200;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 30;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Variable
+    {
+        Name = OrientationAngle;
+        Public = 1;
+        Global = 0;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 1;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = -180.000000;
+        Max = 180.000000;
+    }
+
+    Variable
+    {
+        Name = DopplerPitchScalar;
+        Public = 1;
+        Global = 0;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 1;
+        Read Only = 0;
+        Time = 0;
+        Value = 1.000000;
+        Initial Value = 1.000000;
+        Min = 0.000000;
+        Max = 4.000000;
+    }
+
+    Variable
+    {
+        Name = SpeedOfSound;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 1;
+        Read Only = 0;
+        Time = 0;
+        Value = 343.500000;
+        Initial Value = 343.500000;
+        Min = 0.000000;
+        Max = 1000000.000000;
+    }
+
+    Variable
+    {
+        Name = ReleaseTime;
+        Public = 1;
+        Global = 0;
+        Internal = 1;
+        External = 1;
+        Monitored = 1;
+        Reserved = 1;
+        Read Only = 1;
+        Time = 1;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 15000.000000;
+    }
+
+    Variable
+    {
+        Name = AttackTime;
+        Public = 1;
+        Global = 0;
+        Internal = 1;
+        External = 1;
+        Monitored = 1;
+        Reserved = 1;
+        Read Only = 1;
+        Time = 1;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 15000.000000;
+    }
+
+    Variable
+    {
+        Name = NumCueInstances;
+        Public = 1;
+        Global = 0;
+        Internal = 1;
+        External = 1;
+        Monitored = 1;
+        Reserved = 1;
+        Read Only = 1;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 1024.000000;
+    }
+
+    Variable
+    {
+        Name = Distance;
+        Public = 1;
+        Global = 0;
+        Internal = 0;
+        External = 1;
+        Monitored = 0;
+        Reserved = 1;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 10000.000000;
+    }
+
+    Variable
+    {
+        Name = Weapon_LodCutoff;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 10000.000000;
+        Initial Value = 10000.000000;
+        Min = -1.000000;
+        Max = 10000.000000;
+    }
+
+    Variable
+    {
+        Name = UnitMove_LodCutoff;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 10000.000000;
+        Initial Value = 10000.000000;
+        Min = -1.000000;
+        Max = 10000.000000;
+    }
+
+    Variable
+    {
+        Name = DefaultLodCutoff;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = -1.000000;
+        Initial Value = -1.000000;
+        Min = -1.000000;
+        Max = 10000.000000;
+    }
+
+    Variable
+    {
+        Name = UnitRumble_LodCutoff;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 256.000000;
+        Initial Value = 100.000000;
+        Min = -1.000000;
+        Max = 10000.000000;
+    }
+
+    Variable
+    {
+        Name = Rumble1;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 10.000000;
+    }
+
+    Variable
+    {
+        Name = WeaponBig_LodCutoff;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 10000.000000;
+        Initial Value = 10000.000000;
+        Min = -1.000000;
+        Max = 10000.000000;
+    }
+
+    Variable
+    {
+        Name = UAL_Rumble1;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 10.000000;
+    }
+
+    Variable
+    {
+        Name = UES_Rumble1;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 10.000000;
+    }
+
+    Variable
+    {
+        Name = URA_Rumble1;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 10.000000;
+    }
+
+    Variable
+    {
+        Name = UEL_RumbleTanks1;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 10.000000;
+    }
+
+    Variable
+    {
+        Name = CameraDistance;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 576.760559;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 100000.000000;
+    }
+
+    Variable
+    {
+        Name = Duck;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 1.000000;
+    }
+
+    Variable
+    {
+        Name = DuckLength;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.500000;
+        Initial Value = 0.500000;
+        Min = 0.000000;
+        Max = 10.000000;
+    }
+
+    Variable
+    {
+        Name = ZoomPercent;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 75.785828;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 100.000000;
+    }
+
+    Variable
+    {
+        Name = Angle;
+        Public = 1;
+        Global = 0;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 32.641476;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 180.000000;
+    }
+
+    RPC
+    {
+        Name = Rumble1;
+
+        RPC Curve
+        {
+            Name = Sound::ba0942a5-e61a-48a5-9285-fea484d50888;
+            Property = 0;
+            Sound = 1;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Rumble1;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 10.000000;
+                Y = -1215.030151;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = UAL_Rumble1;
+
+        RPC Curve
+        {
+            Name = Sound::9156eec0-2519-4e7d-8248-881cccdedb9d;
+            Property = 0;
+            Sound = 1;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = UAL_Rumble1;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 10.000000;
+                Y = -11.030121;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = UES_Rumble1;
+
+        RPC Curve
+        {
+            Name = Sound::f21a590b-ceca-42b4-8f18-51582e0fc0f4;
+            Property = 0;
+            Sound = 1;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = UES_Rumble1;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 10.000000;
+                Y = -11.030121;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = URA_Rumble1;
+
+        RPC Curve
+        {
+            Name = Sound::535cb54b-03a6-404e-8480-8204dc37e5af;
+            Property = 0;
+            Sound = 1;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = URA_Rumble1;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 10.000000;
+                Y = -11.030121;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = UEL_Rumble1;
+
+        RPC Curve
+        {
+            Name = Sound::2c5f08d4-46b1-4662-bb62-4f6c660b1e35;
+            Property = 0;
+            Sound = 1;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = UEL_RumbleTanks1;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 10.000000;
+                Y = -22.959869;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Attenuation;
+
+        RPC Curve
+        {
+            Name = Sound::de3d22a4-d199-4924-ab3f-4be3aefe39c8;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4287062800;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Distance;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 0.660400;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 794.044678;
+                Y = -2410.416504;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 2531.017334;
+                Y = -4854.166992;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 3449.131592;
+                Y = -9387.500000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 3746.898193;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Attenuation Weapons;
+
+        RPC Curve
+        {
+            Name = Sound::ce4a7159-3295-4d0d-af37-4b6625ce1df0;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4287389511;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Distance;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -11.030121;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 543.018311;
+                Y = -1049.638062;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 2506.203369;
+                Y = -1560.416748;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 4565.756836;
+                Y = -2500.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 6501.240723;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = AttackRelease_UnitMovement_Short;
+
+        RPC Curve
+        {
+            Name = 1::2aa78196-699a-4517-b0c3-d59e82d18a6a;
+            Property = 0;
+            Sound = 0;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = AttackTime;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 80.000000;
+                Y = -2446.113281;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 181.000000;
+                Y = -1315.924561;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 412.000000;
+                Y = -641.452881;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 666.000000;
+                Y = -257.278046;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 1000.000000;
+                Y = -2.003937;
+                Curve = 0;
+            }
+        }
+
+        RPC Curve
+        {
+            Name = 1::c57b377e-6c92-4d76-82c0-d9543ff0a793;
+            Property = 0;
+            Sound = 0;
+            Line Color = 4294901760;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = ReleaseTime;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 2991.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Attenuation Destroy;
+
+        RPC Curve
+        {
+            Name = Sound::61de13cf-0ac3-4d8d-a734-0bb8d1464634;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4289126945;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Distance;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 30.113205;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 87.189804;
+                Y = -5.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 326.704559;
+                Y = -648.145691;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 3101.737061;
+                Y = -2800.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 4863.523438;
+                Y = -4145.833008;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 6129.032227;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Attenuation Close Up;
+
+        RPC Curve
+        {
+            Name = Sound::b7937ff1-7500-4761-a266-994ab887ba25;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4293620379;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Distance;
+            }
+
+            RPC Point
+            {
+                X = 20.120724;
+                Y = -2.169800;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 198.511169;
+                Y = -462.500000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 500.000000;
+                Y = -2587.500000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 2456.575684;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = MusicRelease;
+
+        RPC Curve
+        {
+            Name = 1::0fe352bf-f21b-415c-ba38-4456267587f7;
+            Property = 0;
+            Sound = 0;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = ReleaseTime;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 1592.000000;
+                Y = -236.256271;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 3030.000000;
+                Y = -721.437195;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 4700.000000;
+                Y = -2021.542603;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 6061.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Attenuation ZoomOut;
+
+        RPC Curve
+        {
+            Name = Sound::6c4aa1bd-06e7-47d3-af96-941a17f504c0;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4283513994;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Distance;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 325.342468;
+                Y = -337.281372;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = AttackRelease2_Building_Weapons_Long;
+
+        RPC Curve
+        {
+            Name = 1::b08fd5fb-ddf8-4764-82e2-3b7c20ab68e0;
+            Property = 0;
+            Sound = 0;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = AttackTime;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 71.000000;
+                Y = -1799.170654;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 150.000000;
+                Y = -798.276367;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 292.000000;
+                Y = -236.256271;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 532.000000;
+                Y = 1.783905;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 14999.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+        }
+
+        RPC Curve
+        {
+            Name = 1::b7d7690c-0607-4488-96b8-852b35518d63;
+            Property = 0;
+            Sound = 0;
+            Line Color = 4294901760;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = ReleaseTime;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 1012.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Attenuation Close Up Micro;
+
+        RPC Curve
+        {
+            Name = Sound::5a9a37e5-671d-4e19-b6db-4a1dded1ddf0;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4292556404;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Distance;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 92.685951;
+                Y = -1146.910645;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 106.419502;
+                Y = -1802.296875;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 144.181259;
+                Y = -3086.585693;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 181.943008;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Duck;
+
+        RPC Curve
+        {
+            Name = Sound::5ebaca26-0a62-4b72-999a-74c5dfe63be4;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4288862961;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Duck;
+            }
+
+            RPC Point
+            {
+                X = 0.001733;
+                Y = 1.783905;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 0.528536;
+                Y = -1000.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Global_Ambient_Rumble_Zoom;
+
+        RPC Curve
+        {
+            Name = Sound::37a1122f-db0f-49d1-9ce8-5fa3a4440d4d;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4291469915;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = CameraDistance;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -2044.047974;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 323.834198;
+                Y = -1357.583374;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 841.968872;
+                Y = -977.091431;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 1360.103638;
+                Y = -670.111206;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 1813.471436;
+                Y = -408.857300;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 3659.326416;
+                Y = -0.436554;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Angle_Attenuation;
+
+        RPC Curve
+        {
+            Name = Sound::900c3e2c-35f4-4771-876d-6310ab656a64;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4283381679;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Angle;
+            }
+
+            RPC Point
+            {
+                X = 0.937386;
+                Y = 1.783905;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 45.233967;
+                Y = -612.969910;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 90.155975;
+                Y = -2021.542603;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 118.856148;
+                Y = -461.904419;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 180.000000;
+                Y = -22.959869;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Music Att;
+
+        RPC Curve
+        {
+            Name = Sound::4fcffeb2-0fa1-4359-8128-8f75cd726e85;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4288885614;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Distance;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 2258.064453;
+                Y = -4606.250000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 7245.657715;
+                Y = -4500.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    Compression Preset
+    {
+        Name = ADPCM 256;
+        Xbox Format Tag = 357;
+        Target Sample Rate = 48000;
+        Quality = 75;
+        Find Best Quality = 0;
+        High Freq Cut = 0;
+        Loop = 0;
+        PC Format Tag = 2;
+        Samples Per Block = 256;
+    }
+
+    Compression Preset
+    {
+        Name = ADPCM 512;
+        Xbox Format Tag = 357;
+        Target Sample Rate = 48000;
+        Quality = 75;
+        Find Best Quality = 0;
+        High Freq Cut = 0;
+        Loop = 0;
+        PC Format Tag = 2;
+        Samples Per Block = 512;
+    }
+
+    Compression Preset
+    {
+        Name = ADPCM 128;
+        Xbox Format Tag = 357;
+        Target Sample Rate = 48000;
+        Quality = 60;
+        Find Best Quality = 0;
+        High Freq Cut = 0;
+        Loop = 0;
+        PC Format Tag = 2;
+        Samples Per Block = 128;
+    }
+}
+
+Wave Bank
+{
+    Name = SC_URSDestroy;
+    Xbox File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\.temp\build_SC_URSDestroy\Xbox\SC_URSDestroy.xwb;
+    Windows File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\.temp\build_SC_URSDestroy\Win\SC_URSDestroy.xwb;
+    Xbox Bank Path Edited = 0;
+    Windows Bank Path Edited = 0;
+    Streaming = 1;
+    Seek Tables = 1;
+    Compression Preset Name = ADPCM 256;
+    Xbox Bank Last Modified Low = 0;
+    Xbox Bank Last Modified High = 0;
+    PC Bank Last Modified Low = 0;
+    PC Bank Last Modified High = 0;
+    Bank Last Revised Low = 0;
+    Bank Last Revised High = 0;
+
+    Wave
+    {
+        Name = URSDestroy_000;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\URSDestroy\URS0202_Destroy.wav;
+        Build Settings Last Modified Low = 0;
+        Build Settings Last Modified High = 0;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44097;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 1400064;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = URSDestroy_001;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\URSDestroy\URS0103_Destroy.wav;
+        Build Settings Last Modified Low = 0;
+        Build Settings Last Modified High = 0;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44102;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 1301504;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = URSDestroy_002;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\URSDestroy\URS0201_Destroy.wav;
+        Build Settings Last Modified Low = 0;
+        Build Settings Last Modified High = 0;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44096;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 1080320;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = URSDestroy_003;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\URSDestroy\URS0302_Destroy.wav;
+        Build Settings Last Modified Low = 0;
+        Build Settings Last Modified High = 0;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 2562560;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = URSDestroy_004;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\URSDestroy\URS0203_Destroy.wav;
+        Build Settings Last Modified Low = 0;
+        Build Settings Last Modified High = 0;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44099;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 993536;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = URSDestroy_005;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\URSDestroy\URS_Expl_Underwater.wav;
+        Build Settings Last Modified Low = 0;
+        Build Settings Last Modified High = 0;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44122;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 207868;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = URSDestroy_006;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\URSDestroy\URS_Expl_Underwater_1.wav;
+        Build Settings Last Modified Low = 0;
+        Build Settings Last Modified High = 0;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44114;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 201468;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = URSDestroy_007;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\URSDestroy\URS_Expl_Underwater_2.wav;
+        Build Settings Last Modified Low = 0;
+        Build Settings Last Modified High = 0;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 225536;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+}
+
+Sound Bank
+{
+    Name = SC_URSDestroy;
+    Xbox File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\.temp\build_SC_URSDestroy\Xbox\SC_URSDestroy.xsb;
+    Windows File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\.temp\build_SC_URSDestroy\Win\SC_URSDestroy.xsb;
+    Xbox Bank Path Edited = 0;
+    Windows Bank Path Edited = 0;
+    Bank Last Modified Low = 0;
+    Bank Last Modified High = 0;
+    Header Last Modified High = 0;
+    Header Last Modified Low = 0;
+
+    Sound
+    {
+        Name = URS0103_Destroy;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+    {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position on Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_URSDestroy;
+                    Bank Index = 0;
+                    Entry Name = URSDestroy_001;
+                    Entry Index = 1;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = URS0201_Destroy;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+    {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position on Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_URSDestroy;
+                    Bank Index = 0;
+                    Entry Name = URSDestroy_002;
+                    Entry Index = 2;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = URS0302_Destroy;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+    {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position on Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_URSDestroy;
+                    Bank Index = 0;
+                    Entry Name = URSDestroy_003;
+                    Entry Index = 3;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = URS0203_Destroy;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+    {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position on Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_URSDestroy;
+                    Bank Index = 0;
+                    Entry Name = URSDestroy_004;
+                    Entry Index = 4;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = URS0202_Destroy;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+    {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position on Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_URSDestroy;
+                    Bank Index = 0;
+                    Entry Name = URSDestroy_000;
+                    Entry Index = 0;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = URS0303_Destroy;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+    {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position on Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_URSDestroy;
+                    Bank Index = 0;
+                    Entry Name = URSDestroy_003;
+                    Entry Index = 3;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = URS0304_Destroy;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+    {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position on Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_URSDestroy;
+                    Bank Index = 0;
+                    Entry Name = URSDestroy_003;
+                    Entry Index = 3;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = URS_Expl_Underwater;
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+    {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position on Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = SC_URSDestroy;
+                    Bank Index = 0;
+                    Entry Name = URSDestroy_005;
+                    Entry Index = 5;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = URS0103_Destroy;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = URS0103_Destroy;
+            Index = 0;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = URS0201_Destroy;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = URS0201_Destroy;
+            Index = 1;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = URS0302_Destroy;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = URS0302_Destroy;
+            Index = 2;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = URS0203_Destroy;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = URS0203_Destroy;
+            Index = 3;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = URS0202_Destroy;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = URS0202_Destroy;
+            Index = 4;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = URS0303_Destroy;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = URS0303_Destroy;
+            Index = 5;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = URS0304_Destroy;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = URS0304_Destroy;
+            Index = 6;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = URS_Expl_Underwater;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = URS_Expl_Underwater;
+            Index = 7;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,1362 @@
+{
+  "bank_name": "Interface",
+  "tool_version": 41,
+  "format_version": 17229,
+  "num_simple_cues": 17,
+  "num_complex_cues": 95,
+  "num_total_cues": 112,
+  "num_wave_banks": 4,
+  "num_sounds": 112,
+  "wave_banks": [
+    "Interface",
+    "UEFSelect",
+    "CYBRANSelect",
+    "AEONSelect"
+  ],
+  "cue_mappings": [
+    {
+      "cue_index": 0,
+      "cue_name": "UI_Comm_UEF_Out",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 39
+        }
+      ]
+    },
+    {
+      "cue_index": 1,
+      "cue_name": "UI_Comm_UEF_In",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 34
+        }
+      ]
+    },
+    {
+      "cue_index": 2,
+      "cue_name": "UI_Comm_CYB_Out",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 38
+        }
+      ]
+    },
+    {
+      "cue_index": 3,
+      "cue_name": "UI_Comm_CYB_In",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 37
+        }
+      ]
+    },
+    {
+      "cue_index": 4,
+      "cue_name": "UI_Comm_AEON_Out",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 35
+        }
+      ]
+    },
+    {
+      "cue_index": 5,
+      "cue_name": "UI_Comm_AEON_In",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 36
+        }
+      ]
+    },
+    {
+      "cue_index": 6,
+      "cue_name": "UI_Mod_Select",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 49
+        }
+      ]
+    },
+    {
+      "cue_index": 7,
+      "cue_name": "UI_MFD_Click",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 26
+        }
+      ]
+    },
+    {
+      "cue_index": 8,
+      "cue_name": "UI_MFD_Rollover",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 25
+        }
+      ]
+    },
+    {
+      "cue_index": 9,
+      "cue_name": "UI_Mini_Rollover",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 25
+        }
+      ]
+    },
+    {
+      "cue_index": 10,
+      "cue_name": "UI_Mini_MouseDown",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 26
+        }
+      ]
+    },
+    {
+      "cue_index": 11,
+      "cue_name": "UI_Warp_Click_Aeon",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 61
+        }
+      ]
+    },
+    {
+      "cue_index": 12,
+      "cue_name": "UI_Warp_Click_Cybran",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 60
+        }
+      ]
+    },
+    {
+      "cue_index": 13,
+      "cue_name": "UI_Warp_Click_UEF",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 59
+        }
+      ]
+    },
+    {
+      "cue_index": 14,
+      "cue_name": "UI_Warp_Aeon_Commander",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 58
+        }
+      ]
+    },
+    {
+      "cue_index": 15,
+      "cue_name": "UI_Warp_Cybran_Commander",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 58
+        }
+      ]
+    },
+    {
+      "cue_index": 16,
+      "cue_name": "UI_Warp_UEF_Commander",
+      "type": "simple",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 58
+        }
+      ]
+    },
+    {
+      "cue_index": 17,
+      "cue_name": "UI_Menu_Accept_01",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 0
+        }
+      ]
+    },
+    {
+      "cue_index": 18,
+      "cue_name": "UI_Menu_Cancel_02",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 1
+        }
+      ]
+    },
+    {
+      "cue_index": 19,
+      "cue_name": "UI_Menu_Error_01",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 2
+        }
+      ]
+    },
+    {
+      "cue_index": 20,
+      "cue_name": "UI_Menu_Select_01",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 3
+        }
+      ]
+    },
+    {
+      "cue_index": 21,
+      "cue_name": "UI_Skirmish_Map_Select",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 4
+        }
+      ]
+    },
+    {
+      "cue_index": 22,
+      "cue_name": "UI_Menu_Rollover",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 6
+        }
+      ]
+    },
+    {
+      "cue_index": 23,
+      "cue_name": "UI_Menu_MouseDown",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 5
+        }
+      ]
+    },
+    {
+      "cue_index": 24,
+      "cue_name": "UI_AEON_Rollover",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 8
+        }
+      ]
+    },
+    {
+      "cue_index": 25,
+      "cue_name": "UI_Back_MouseDown",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 9
+        }
+      ]
+    },
+    {
+      "cue_index": 26,
+      "cue_name": "UI_Cybran_Rollover",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 10
+        }
+      ]
+    },
+    {
+      "cue_index": 27,
+      "cue_name": "UI_Menu_MouseDown_Sml",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 11
+        }
+      ]
+    },
+    {
+      "cue_index": 28,
+      "cue_name": "UI_Menu_Rollover_Sml",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 12
+        }
+      ]
+    },
+    {
+      "cue_index": 29,
+      "cue_name": "UI_UEF_Rollover",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 7
+        }
+      ]
+    },
+    {
+      "cue_index": 30,
+      "cue_name": "UEF_Select_Vehicle",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "UEFSelect",
+          "wave_bank_index": 1,
+          "wave_index": 0
+        }
+      ]
+    },
+    {
+      "cue_index": 31,
+      "cue_name": "UEF_Select_Air",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "UEFSelect",
+          "wave_bank_index": 1,
+          "wave_index": 1
+        }
+      ]
+    },
+    {
+      "cue_index": 32,
+      "cue_name": "UEF_Select_Bot",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "UEFSelect",
+          "wave_bank_index": 1,
+          "wave_index": 2
+        }
+      ]
+    },
+    {
+      "cue_index": 33,
+      "cue_name": "UEF_Select_Factory",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "UEFSelect",
+          "wave_bank_index": 1,
+          "wave_index": 3
+        }
+      ]
+    },
+    {
+      "cue_index": 34,
+      "cue_name": "UEF_Select_Gun",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "UEFSelect",
+          "wave_bank_index": 1,
+          "wave_index": 4
+        }
+      ]
+    },
+    {
+      "cue_index": 35,
+      "cue_name": "UEF_Select_Naval",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "UEFSelect",
+          "wave_bank_index": 1,
+          "wave_index": 5
+        }
+      ]
+    },
+    {
+      "cue_index": 36,
+      "cue_name": "UEF_Select_Radar",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "UEFSelect",
+          "wave_bank_index": 1,
+          "wave_index": 10
+        }
+      ]
+    },
+    {
+      "cue_index": 37,
+      "cue_name": "UEF_Select_Resource",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "UEFSelect",
+          "wave_bank_index": 1,
+          "wave_index": 6
+        }
+      ]
+    },
+    {
+      "cue_index": 38,
+      "cue_name": "UEF_Select_Sonar",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "UEFSelect",
+          "wave_bank_index": 1,
+          "wave_index": 11
+        }
+      ]
+    },
+    {
+      "cue_index": 39,
+      "cue_name": "UEF_Select_Structure",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "UEFSelect",
+          "wave_bank_index": 1,
+          "wave_index": 9
+        }
+      ]
+    },
+    {
+      "cue_index": 40,
+      "cue_name": "UEF_Select_Sub",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "UEFSelect",
+          "wave_bank_index": 1,
+          "wave_index": 7
+        }
+      ]
+    },
+    {
+      "cue_index": 41,
+      "cue_name": "UEF_Select_Tank",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "UEFSelect",
+          "wave_bank_index": 1,
+          "wave_index": 8
+        }
+      ]
+    },
+    {
+      "cue_index": 42,
+      "cue_name": "Cybran_Select_Air",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "CYBRANSelect",
+          "wave_bank_index": 2,
+          "wave_index": 1
+        }
+      ]
+    },
+    {
+      "cue_index": 43,
+      "cue_name": "Cybran_Select_Bot",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "CYBRANSelect",
+          "wave_bank_index": 2,
+          "wave_index": 2
+        }
+      ]
+    },
+    {
+      "cue_index": 44,
+      "cue_name": "Cybran_Select_Factory",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "CYBRANSelect",
+          "wave_bank_index": 2,
+          "wave_index": 3
+        }
+      ]
+    },
+    {
+      "cue_index": 45,
+      "cue_name": "Cybran_Select_Gun",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "CYBRANSelect",
+          "wave_bank_index": 2,
+          "wave_index": 4
+        }
+      ]
+    },
+    {
+      "cue_index": 46,
+      "cue_name": "Cybran_Select_Naval",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "CYBRANSelect",
+          "wave_bank_index": 2,
+          "wave_index": 5
+        }
+      ]
+    },
+    {
+      "cue_index": 47,
+      "cue_name": "Cybran_Select_Radar",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "CYBRANSelect",
+          "wave_bank_index": 2,
+          "wave_index": 6
+        }
+      ]
+    },
+    {
+      "cue_index": 48,
+      "cue_name": "Cybran_Select_Resource",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "CYBRANSelect",
+          "wave_bank_index": 2,
+          "wave_index": 7
+        }
+      ]
+    },
+    {
+      "cue_index": 49,
+      "cue_name": "Cybran_Select_Sonar",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "CYBRANSelect",
+          "wave_bank_index": 2,
+          "wave_index": 8
+        }
+      ]
+    },
+    {
+      "cue_index": 50,
+      "cue_name": "Cybran_Select_Structure",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "CYBRANSelect",
+          "wave_bank_index": 2,
+          "wave_index": 9
+        }
+      ]
+    },
+    {
+      "cue_index": 51,
+      "cue_name": "Cybran_Select_Sub",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "CYBRANSelect",
+          "wave_bank_index": 2,
+          "wave_index": 10
+        }
+      ]
+    },
+    {
+      "cue_index": 52,
+      "cue_name": "Cybran_Select_Tank",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "CYBRANSelect",
+          "wave_bank_index": 2,
+          "wave_index": 11
+        }
+      ]
+    },
+    {
+      "cue_index": 53,
+      "cue_name": "Cybran_Select_Vehicle",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "CYBRANSelect",
+          "wave_bank_index": 2,
+          "wave_index": 0
+        }
+      ]
+    },
+    {
+      "cue_index": 54,
+      "cue_name": "Aeon_Select_Vehicle",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "AEONSelect",
+          "wave_bank_index": 3,
+          "wave_index": 0
+        }
+      ]
+    },
+    {
+      "cue_index": 55,
+      "cue_name": "Aeon_Select_Air",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "AEONSelect",
+          "wave_bank_index": 3,
+          "wave_index": 1
+        }
+      ]
+    },
+    {
+      "cue_index": 56,
+      "cue_name": "Aeon_Select_Bot",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "AEONSelect",
+          "wave_bank_index": 3,
+          "wave_index": 2
+        }
+      ]
+    },
+    {
+      "cue_index": 57,
+      "cue_name": "Aeon_Select_Factory",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "AEONSelect",
+          "wave_bank_index": 3,
+          "wave_index": 3
+        }
+      ]
+    },
+    {
+      "cue_index": 58,
+      "cue_name": "Aeon_Select_Gun",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "AEONSelect",
+          "wave_bank_index": 3,
+          "wave_index": 4
+        }
+      ]
+    },
+    {
+      "cue_index": 59,
+      "cue_name": "Aeon_Select_Naval",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "AEONSelect",
+          "wave_bank_index": 3,
+          "wave_index": 5
+        }
+      ]
+    },
+    {
+      "cue_index": 60,
+      "cue_name": "Aeon_Select_Radar",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "AEONSelect",
+          "wave_bank_index": 3,
+          "wave_index": 6
+        }
+      ]
+    },
+    {
+      "cue_index": 61,
+      "cue_name": "Aeon_Select_Resource",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "AEONSelect",
+          "wave_bank_index": 3,
+          "wave_index": 7
+        }
+      ]
+    },
+    {
+      "cue_index": 62,
+      "cue_name": "Aeon_Select_Sonar",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "AEONSelect",
+          "wave_bank_index": 3,
+          "wave_index": 8
+        }
+      ]
+    },
+    {
+      "cue_index": 63,
+      "cue_name": "Aeon_Select_Structure",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "AEONSelect",
+          "wave_bank_index": 3,
+          "wave_index": 9
+        }
+      ]
+    },
+    {
+      "cue_index": 64,
+      "cue_name": "Aeon_Select_Sub",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "AEONSelect",
+          "wave_bank_index": 3,
+          "wave_index": 10
+        }
+      ]
+    },
+    {
+      "cue_index": 65,
+      "cue_name": "Aeon_Select_Tank",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "AEONSelect",
+          "wave_bank_index": 3,
+          "wave_index": 11
+        }
+      ]
+    },
+    {
+      "cue_index": 66,
+      "cue_name": "UEF_Select_Commander",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "UEFSelect",
+          "wave_bank_index": 1,
+          "wave_index": 12
+        }
+      ]
+    },
+    {
+      "cue_index": 67,
+      "cue_name": "Cybran_Select_Commander",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "CYBRANSelect",
+          "wave_bank_index": 2,
+          "wave_index": 12
+        }
+      ]
+    },
+    {
+      "cue_index": 68,
+      "cue_name": "Aeon_Select_Commander",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "AEONSelect",
+          "wave_bank_index": 3,
+          "wave_index": 12
+        }
+      ]
+    },
+    {
+      "cue_index": 69,
+      "cue_name": "UI_Main_Window_Open",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 13
+        }
+      ]
+    },
+    {
+      "cue_index": 70,
+      "cue_name": "UI_Main_Window_Close",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 18
+        }
+      ]
+    },
+    {
+      "cue_index": 71,
+      "cue_name": "UI_Objective_Window_Open",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 17
+        }
+      ]
+    },
+    {
+      "cue_index": 72,
+      "cue_name": "UI_Objective_Window_Close",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 16
+        }
+      ]
+    },
+    {
+      "cue_index": 73,
+      "cue_name": "UI_Objective_Description",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 15
+        }
+      ]
+    },
+    {
+      "cue_index": 74,
+      "cue_name": "UI_Objective_Checked",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 14
+        }
+      ]
+    },
+    {
+      "cue_index": 75,
+      "cue_name": "UI_Score_Window_Open",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 22
+        }
+      ]
+    },
+    {
+      "cue_index": 76,
+      "cue_name": "UI_Score_Window_Close",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 21
+        }
+      ]
+    },
+    {
+      "cue_index": 77,
+      "cue_name": "UI_Options_Rollover",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 27
+        }
+      ]
+    },
+    {
+      "cue_index": 78,
+      "cue_name": "UI_Mail_Window_Open",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 19
+        }
+      ]
+    },
+    {
+      "cue_index": 79,
+      "cue_name": "UI_Mail_Window_Close",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 20
+        }
+      ]
+    },
+    {
+      "cue_index": 80,
+      "cue_name": "UI_Diplomacy_Open",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 24
+        }
+      ]
+    },
+    {
+      "cue_index": 81,
+      "cue_name": "UI_Diplomacy_Close",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 23
+        }
+      ]
+    },
+    {
+      "cue_index": 82,
+      "cue_name": "UI_Action_Rollover",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 54
+        }
+      ]
+    },
+    {
+      "cue_index": 83,
+      "cue_name": "UI_Action_MouseDown",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 55
+        }
+      ]
+    },
+    {
+      "cue_index": 84,
+      "cue_name": "Cybran_Select_Spider",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "CYBRANSelect",
+          "wave_bank_index": 2,
+          "wave_index": 13
+        }
+      ]
+    },
+    {
+      "cue_index": 85,
+      "cue_name": "UI_Opt_Affirm_Over",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 29
+        }
+      ]
+    },
+    {
+      "cue_index": 86,
+      "cue_name": "UI_Opt_Menu_Top_Click",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 28
+        }
+      ]
+    },
+    {
+      "cue_index": 87,
+      "cue_name": "UI_Opt_Menu_Top_Over",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 31
+        }
+      ]
+    },
+    {
+      "cue_index": 88,
+      "cue_name": "UI_Opt_Mini_Button_Click",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 56
+        }
+      ]
+    },
+    {
+      "cue_index": 89,
+      "cue_name": "UI_Opt_Mini_Button_Over",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 57
+        }
+      ]
+    },
+    {
+      "cue_index": 90,
+      "cue_name": "UI_Opt_Yes_No",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 30
+        }
+      ]
+    },
+    {
+      "cue_index": 91,
+      "cue_name": "UI_Arrow_Click",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 50
+        }
+      ]
+    },
+    {
+      "cue_index": 92,
+      "cue_name": "UI_Enhancements_Click",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 41
+        }
+      ]
+    },
+    {
+      "cue_index": 93,
+      "cue_name": "UI_Enhancements_Rollover",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 42
+        }
+      ]
+    },
+    {
+      "cue_index": 94,
+      "cue_name": "UI_Main_IG_Click",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 47
+        }
+      ]
+    },
+    {
+      "cue_index": 95,
+      "cue_name": "UI_Menu_Small_Over",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 48
+        }
+      ]
+    },
+    {
+      "cue_index": 96,
+      "cue_name": "UI_Objectives_Click",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 40
+        }
+      ]
+    },
+    {
+      "cue_index": 97,
+      "cue_name": "UI_Tab_Click_01",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 45
+        }
+      ]
+    },
+    {
+      "cue_index": 98,
+      "cue_name": "UI_Tab_Click_02",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 43
+        }
+      ]
+    },
+    {
+      "cue_index": 99,
+      "cue_name": "UI_Tab_Rollover_01",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 44
+        }
+      ]
+    },
+    {
+      "cue_index": 100,
+      "cue_name": "UI_Tab_Rollover_02",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 46
+        }
+      ]
+    },
+    {
+      "cue_index": 101,
+      "cue_name": "UI_Input_Error",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 53
+        }
+      ]
+    },
+    {
+      "cue_index": 102,
+      "cue_name": "UI_Economy_Rollover",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 52
+        }
+      ]
+    },
+    {
+      "cue_index": 103,
+      "cue_name": "UI_Economy_Click",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 51
+        }
+      ]
+    },
+    {
+      "cue_index": 104,
+      "cue_name": "UI_Avatar_Hide",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 23
+        }
+      ]
+    },
+    {
+      "cue_index": 105,
+      "cue_name": "UI_Construct_Pause",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 40
+        }
+      ]
+    },
+    {
+      "cue_index": 106,
+      "cue_name": "UI_Construct_Infinite",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 28
+        }
+      ]
+    },
+    {
+      "cue_index": 107,
+      "cue_name": "UI_Tech_Level_Click",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 3
+        }
+      ]
+    },
+    {
+      "cue_index": 108,
+      "cue_name": "UI_Tech_Level_Rollover",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 48
+        }
+      ]
+    },
+    {
+      "cue_index": 109,
+      "cue_name": "UI_Camera_Save_Position",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 47
+        }
+      ]
+    },
+    {
+      "cue_index": 110,
+      "cue_name": "UI_Camera_Recall_Position",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 31
+        }
+      ]
+    },
+    {
+      "cue_index": 111,
+      "cue_name": "UI_Camera_Delete_Position",
+      "type": "complex_soundref",
+      "wave_refs": [
+        {
+          "wave_bank": "Interface",
+          "wave_bank_index": 0,
+          "wave_index": 18
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "bank_name": "AmbientTest",
+  "cue_names": [
+    "AMB_Planet_Rumble_zoom",
+    "AMB_Menu_Loop",
+    "Gen_Fire_Loop",
+    "Gen_Fire_Start",
+    "Gen_Tree_Crush",
+    "AMB_AEON_OP_Briefing",
+    "AMB_CYBRAN_OP_Briefing",
+    "AMB_UEF_OP_Briefing"
+  ],
+  "cue_to_sound": [
+    65535,
+    1,
+    65535,
+    65535,
+    0,
+    65535,
+    5,
+    65535
+  ],
+  "sound_to_wave": {
+    "0": 0,
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 0
+  },
+  "cue_to_wave": {
+    "1": 1,
+    "4": 0,
+    "6": 5
+  },
+  "wave_count": 7,
+  "cue_count": 8
+}

@@ -1,0 +1,374 @@
+{
+    "Cybran_Select_Tank":  {
+                               "offset":  80,
+                               "ch":  1,
+                               "rate":  44100,
+                               "length":  28550
+                           },
+    "Cybran_Select_Gun":  {
+                              "offset":  80,
+                              "ch":  1,
+                              "rate":  44100,
+                              "length":  2582
+                          },
+    "UEF_Select_Gun":  {
+                           "offset":  80,
+                           "ch":  1,
+                           "rate":  44100,
+                           "length":  48688
+                       },
+    "UEF_Select_Air":  {
+                           "offset":  80,
+                           "ch":  1,
+                           "rate":  44100,
+                           "length":  45448
+                       },
+    "UI_MFD_Click":  {
+                         "offset":  80,
+                         "ch":  1,
+                         "rate":  44100,
+                         "length":  102312
+                     },
+    "UI_Warp_Click_Cybran":  {
+                                 "offset":  80,
+                                 "ch":  1,
+                                 "rate":  44100,
+                                 "length":  56030
+                             },
+    "UEF_Select_Vehicle":  {
+                               "offset":  80,
+                               "ch":  1,
+                               "rate":  44100,
+                               "length":  84192
+                           },
+    "UI_Warp_Cybran_Commander":  {
+                                     "offset":  80,
+                                     "ch":  1,
+                                     "rate":  44100,
+                                     "length":  40752
+                                 },
+    "UI_Comm_UEF_Out":  {
+                            "offset":  80,
+                            "ch":  1,
+                            "rate":  44100,
+                            "length":  13288
+                        },
+    "UI_Menu_Error_01":  {
+                             "offset":  80,
+                             "ch":  1,
+                             "rate":  44100,
+                             "length":  32972
+                         },
+    "UEF_Select_Bot":  {
+                           "offset":  80,
+                           "ch":  1,
+                           "rate":  44100,
+                           "length":  7596
+                       },
+    "Aeon_Select_Bot":  {
+                            "offset":  80,
+                            "ch":  1,
+                            "rate":  44100,
+                            "length":  3162
+                        },
+    "UI_Menu_MouseDown_Sml":  {
+                                  "offset":  80,
+                                  "ch":  1,
+                                  "rate":  44100,
+                                  "length":  29022
+                              },
+    "UI_Comm_CYB_In":  {
+                           "offset":  80,
+                           "ch":  1,
+                           "rate":  44100,
+                           "length":  9288
+                       },
+    "UI_Menu_Accept_01":  {
+                              "offset":  80,
+                              "ch":  1,
+                              "rate":  44100,
+                              "length":  78914
+                          },
+    "UI_Comm_CYB_Out":  {
+                            "offset":  80,
+                            "ch":  1,
+                            "rate":  44100,
+                            "length":  11112
+                        },
+    "UI_Menu_Select_01":  {
+                              "offset":  80,
+                              "ch":  1,
+                              "rate":  44100,
+                              "length":  38230
+                          },
+    "UI_Menu_Rollover":  {
+                             "offset":  80,
+                             "ch":  1,
+                             "rate":  44100,
+                             "length":  24436
+                         },
+    "Cybran_Select_Air":  {
+                              "offset":  80,
+                              "ch":  1,
+                              "rate":  44100,
+                              "length":  7288
+                          },
+    "Aeon_Select_Factory":  {
+                                "offset":  80,
+                                "ch":  1,
+                                "rate":  44100,
+                                "length":  17828
+                            },
+    "UEF_Select_Sub":  {
+                           "offset":  80,
+                           "ch":  1,
+                           "rate":  44100,
+                           "length":  49612
+                       },
+    "UI_Mini_Rollover":  {
+                             "offset":  80,
+                             "ch":  1,
+                             "rate":  44100,
+                             "length":  93580
+                         },
+    "UI_Menu_MouseDown":  {
+                              "offset":  80,
+                              "ch":  1,
+                              "rate":  44100,
+                              "length":  38990
+                          },
+    "Cybran_Select_Sub":  {
+                              "offset":  80,
+                              "ch":  1,
+                              "rate":  44100,
+                              "length":  43856
+                          },
+    "Cybran_Select_Radar":  {
+                                "offset":  80,
+                                "ch":  1,
+                                "rate":  44100,
+                                "length":  98658
+                            },
+    "UI_Warp_Click_Aeon":  {
+                               "offset":  80,
+                               "ch":  1,
+                               "rate":  44100,
+                               "length":  61158
+                           },
+    "Cybran_Select_Vehicle":  {
+                                  "offset":  80,
+                                  "ch":  1,
+                                  "rate":  44100,
+                                  "length":  14976
+                              },
+    "UI_Comm_UEF_In":  {
+                           "offset":  80,
+                           "ch":  1,
+                           "rate":  44100,
+                           "length":  27880
+                       },
+    "Aeon_Select_Air":  {
+                            "offset":  80,
+                            "ch":  1,
+                            "rate":  44100,
+                            "length":  4196
+                        },
+    "UI_Cybran_Rollover":  {
+                               "offset":  80,
+                               "ch":  1,
+                               "rate":  44100,
+                               "length":  22928
+                           },
+    "UI_Mod_Select":  {
+                          "offset":  80,
+                          "ch":  1,
+                          "rate":  44100,
+                          "length":  58204
+                      },
+    "Cybran_Select_Structure":  {
+                                    "offset":  80,
+                                    "ch":  1,
+                                    "rate":  44100,
+                                    "length":  6086
+                                },
+    "UI_AEON_Rollover":  {
+                             "offset":  80,
+                             "ch":  1,
+                             "rate":  44100,
+                             "length":  40468
+                         },
+    "UI_Mini_MouseDown":  {
+                              "offset":  80,
+                              "ch":  1,
+                              "rate":  44100,
+                              "length":  87712
+                          },
+    "UEF_Select_Structure":  {
+                                 "offset":  80,
+                                 "ch":  1,
+                                 "rate":  44100,
+                                 "length":  35194
+                             },
+    "UEF_Select_Sonar":  {
+                             "offset":  80,
+                             "ch":  1,
+                             "rate":  44100,
+                             "length":  44486
+                         },
+    "UEF_Select_Resource":  {
+                                "offset":  80,
+                                "ch":  1,
+                                "rate":  44100,
+                                "length":  46912
+                            },
+    "Aeon_Select_Gun":  {
+                            "offset":  80,
+                            "ch":  2,
+                            "rate":  44100,
+                            "length":  685180
+                        },
+    "UI_Skirmish_Map_Select":  {
+                                   "offset":  80,
+                                   "ch":  1,
+                                   "rate":  44100,
+                                   "length":  21978
+                               },
+    "Cybran_Select_Resource":  {
+                                   "offset":  80,
+                                   "ch":  2,
+                                   "rate":  44100,
+                                   "length":  95100
+                               },
+    "Cybran_Select_Factory":  {
+                                  "offset":  80,
+                                  "ch":  1,
+                                  "rate":  44100,
+                                  "length":  6684
+                              },
+    "UI_MFD_Rollover":  {
+                            "offset":  80,
+                            "ch":  1,
+                            "rate":  44100,
+                            "length":  85126
+                        },
+    "UI_Warp_Click_UEF":  {
+                              "offset":  80,
+                              "ch":  1,
+                              "rate":  44100,
+                              "length":  71972
+                          },
+    "Aeon_Select_Resource":  {
+                                 "offset":  80,
+                                 "ch":  2,
+                                 "rate":  44100,
+                                 "length":  524296
+                             },
+    "UI_Comm_AEON_Out":  {
+                             "offset":  80,
+                             "ch":  1,
+                             "rate":  44100,
+                             "length":  32172
+                         },
+    "UI_Warp_UEF_Commander":  {
+                                  "offset":  80,
+                                  "ch":  1,
+                                  "rate":  44100,
+                                  "length":  46752
+                              },
+    "Aeon_Select_Vehicle":  {
+                                "offset":  80,
+                                "ch":  1,
+                                "rate":  44100,
+                                "length":  17648
+                            },
+    "Cybran_Select_Naval":  {
+                                "offset":  80,
+                                "ch":  1,
+                                "rate":  44100,
+                                "length":  15900
+                            },
+    "Aeon_Select_Radar":  {
+                              "offset":  80,
+                              "ch":  2,
+                              "rate":  44100,
+                              "length":  494912
+                          },
+    "UEF_Select_Radar":  {
+                             "offset":  80,
+                             "ch":  1,
+                             "rate":  44100,
+                             "length":  41984
+                         },
+    "UEF_Select_Tank":  {
+                            "offset":  80,
+                            "ch":  1,
+                            "rate":  44100,
+                            "length":  3472
+                        },
+    "UI_Back_MouseDown":  {
+                              "offset":  80,
+                              "ch":  1,
+                              "rate":  44100,
+                              "length":  17912
+                          },
+    "UI_UEF_Rollover":  {
+                            "offset":  80,
+                            "ch":  1,
+                            "rate":  44100,
+                            "length":  55872
+                        },
+    "UI_Menu_Cancel_02":  {
+                              "offset":  80,
+                              "ch":  1,
+                              "rate":  44100,
+                              "length":  76208
+                          },
+    "Cybran_Select_Bot":  {
+                              "offset":  80,
+                              "ch":  1,
+                              "rate":  44100,
+                              "length":  4698
+                          },
+    "UEF_Select_Naval":  {
+                             "offset":  80,
+                             "ch":  1,
+                             "rate":  44100,
+                             "length":  54840
+                         },
+    "UI_Menu_Rollover_Sml":  {
+                                 "offset":  80,
+                                 "ch":  1,
+                                 "rate":  44100,
+                                 "length":  23772
+                             },
+    "Aeon_Select_Naval":  {
+                              "offset":  80,
+                              "ch":  2,
+                              "rate":  44100,
+                              "length":  684588
+                          },
+    "Cybran_Select_Sonar":  {
+                                "offset":  80,
+                                "ch":  1,
+                                "rate":  44100,
+                                "length":  13790
+                            },
+    "UEF_Select_Factory":  {
+                               "offset":  80,
+                               "ch":  1,
+                               "rate":  44100,
+                               "length":  5328
+                           },
+    "UI_Warp_Aeon_Commander":  {
+                                   "offset":  80,
+                                   "ch":  1,
+                                   "rate":  44100,
+                                   "length":  18198
+                               },
+    "UI_Comm_AEON_In":  {
+                            "offset":  80,
+                            "ch":  1,
+                            "rate":  44100,
+                            "length":  105170
+                        }
+}

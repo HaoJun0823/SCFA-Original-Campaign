@@ -1,0 +1,8249 @@
+Signature = XACT2;
+Version = 17;
+Content Version = 43;
+Release = November 2007;
+
+Options
+{
+    Verbose Report = 0;
+    Generate C/C++ Headers = 1;
+}
+
+Global Settings
+{
+    Xbox File = Xbox\SupCom.xgs;
+    Windows File = Win\SupCom.xgs;
+    Header File = D:\work\rts\main\data\sounds\SupCom.h;
+    Exclude Category Names = 0;
+    Exclude Variable Names = 0;
+    Last Modified Low = 3921295702;
+    Last Modified High = 31001778;
+
+    Category
+    {
+        Name = Global;
+        Comment = was +2;
+        Public = 1;
+        Background Music = 0;
+        Volume = 600;
+
+        Category Entry
+        {
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Default;
+        Public = 1;
+        Background Music = 0;
+        Volume = -200;
+
+        Category Entry
+        {
+            Name = Global;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Music;
+        Comment = -2 9-30-06 12-7-06  was -5;
+        Public = 1;
+        Background Music = 1;
+        Volume = 0;
+
+        Category Entry
+        {
+            Name = Global;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 1;
+            Behavior = 2;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 200;
+                Crossfade Type = 1;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = World;
+        Comment = was 3;
+        Public = 1;
+        Background Music = 0;
+        Volume = 200;
+
+        Category Entry
+        {
+            Name = Global;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 200;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 100;
+                Crossfade Type = 1;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Units;
+        Public = 1;
+        Background Music = 0;
+        Volume = 0;
+
+        Category Entry
+        {
+            Name = World;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Ambient;
+        Public = 1;
+        Background Music = 0;
+        Volume = -200;
+
+        Category Entry
+        {
+            Name = World;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 1000;
+                Fade Out = 1000;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Weapons;
+        Public = 1;
+        Background Music = 0;
+        Volume = 0;
+
+        Category Entry
+        {
+            Name = World;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 150;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Destroy;
+        Comment = was 0;
+        Public = 1;
+        Background Music = 0;
+        Volume = 100;
+
+        Category Entry
+        {
+            Name = World;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 100;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Rumble;
+        Public = 1;
+        Background Music = 0;
+        Volume = 0;
+
+        Category Entry
+        {
+            Name = World;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Interface;
+        Public = 1;
+        Background Music = 0;
+        Volume = -500;
+
+        Category Entry
+        {
+            Name = Global;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsUEF;
+        Public = 1;
+        Background Music = 0;
+        Volume = -200;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsAEON;
+        Public = 1;
+        Background Music = 0;
+        Volume = -200;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsCYBRAN;
+        Public = 1;
+        Background Music = 0;
+        Volume = -200;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsUEFAir;
+        Comment = was -5;
+        Public = 1;
+        Background Music = 0;
+        Volume = -800;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsCYBRANAir;
+        Comment = was -3;
+        Public = 1;
+        Background Music = 0;
+        Volume = -600;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsAEONAir;
+        Public = 1;
+        Background Music = 0;
+        Volume = -400;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = ActiveLoopsUEF;
+        Comment = was -8;
+        Public = 1;
+        Background Music = 0;
+        Volume = -600;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = ActiveLoopsCYBRAN;
+        Comment = was -8;
+        Public = 1;
+        Background Music = 0;
+        Volume = -600;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = ActiveLoopsAEON;
+        Comment = was -8;
+        Public = 1;
+        Background Music = 0;
+        Volume = -600;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Unit Select;
+        Public = 1;
+        Background Music = 0;
+        Volume = 200;
+
+        Category Entry
+        {
+            Name = Interface;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = FMV;
+        Public = 1;
+        Background Music = 0;
+        Volume = -400;
+
+        Category Entry
+        {
+            Name = Global;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Op_Briefing;
+        Public = 1;
+        Background Music = 0;
+        Volume = 0;
+
+        Category Entry
+        {
+            Name = Global;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = VO;
+        Public = 1;
+        Background Music = 0;
+        Volume = 0;
+
+        Category Entry
+        {
+            Name = Global;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = US;
+        Comment = was -7;
+        Public = 1;
+        Background Music = 0;
+        Volume = -580;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = DE;
+        Comment = was -14 was -12;
+        Public = 1;
+        Background Music = 0;
+        Volume = -900;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = ES;
+        Comment = was -10.5;
+        Public = 1;
+        Background Music = 0;
+        Volume = -750;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = FR;
+        Comment = was -13;
+        Public = 1;
+        Background Music = 0;
+        Volume = -1000;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = IT;
+        Comment = was -11;
+        Public = 1;
+        Background Music = 0;
+        Volume = -900;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = RU;
+        Comment = was-10 was -8;
+        Public = 1;
+        Background Music = 0;
+        Volume = -700;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = PL;
+        Public = 1;
+        Background Music = 0;
+        Volume = -1000;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = CN;
+        Public = 1;
+        Background Music = 0;
+        Volume = -1000;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = CZ;
+        Public = 1;
+        Background Music = 0;
+        Volume = -1000;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = KR;
+        Public = 1;
+        Background Music = 0;
+        Volume = -1000;
+
+        Category Entry
+        {
+            Name = VO;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = Construction_Loops;
+        Comment = -5;
+        Public = 1;
+        Background Music = 0;
+        Volume = -300;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsSeraphimAir;
+        Comment = was -2;
+        Public = 1;
+        Background Music = 0;
+        Volume = 0;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = UnitsSeraphim;
+        Public = 1;
+        Background Music = 0;
+        Volume = -400;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = ActiveLoopsSeraphim;
+        Public = 1;
+        Background Music = 0;
+        Volume = -500;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 60;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = ConstructionSeraphim;
+        Public = 1;
+        Background Music = 0;
+        Volume = -500;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 30;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Category
+    {
+        Name = SeraphimSea;
+        Comment = 10-3-07 was -4;
+        Public = 1;
+        Background Music = 0;
+        Volume = -200;
+
+        Category Entry
+        {
+            Name = Units;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 30;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Variable
+    {
+        Name = OrientationAngle;
+        Public = 1;
+        Global = 0;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 1;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = -180.000000;
+        Max = 180.000000;
+    }
+
+    Variable
+    {
+        Name = DopplerPitchScalar;
+        Public = 1;
+        Global = 0;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 1;
+        Read Only = 0;
+        Time = 0;
+        Value = 1.000000;
+        Initial Value = 1.000000;
+        Min = 0.000000;
+        Max = 4.000000;
+    }
+
+    Variable
+    {
+        Name = SpeedOfSound;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 1;
+        Read Only = 0;
+        Time = 0;
+        Value = 343.500000;
+        Initial Value = 343.500000;
+        Min = 0.000000;
+        Max = 1000000.000000;
+    }
+
+    Variable
+    {
+        Name = ReleaseTime;
+        Public = 1;
+        Global = 0;
+        Internal = 1;
+        External = 1;
+        Monitored = 1;
+        Reserved = 1;
+        Read Only = 1;
+        Time = 1;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 15000.000000;
+    }
+
+    Variable
+    {
+        Name = AttackTime;
+        Public = 1;
+        Global = 0;
+        Internal = 1;
+        External = 1;
+        Monitored = 1;
+        Reserved = 1;
+        Read Only = 1;
+        Time = 1;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 15000.000000;
+    }
+
+    Variable
+    {
+        Name = NumCueInstances;
+        Public = 1;
+        Global = 0;
+        Internal = 1;
+        External = 1;
+        Monitored = 1;
+        Reserved = 1;
+        Read Only = 1;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 1024.000000;
+    }
+
+    Variable
+    {
+        Name = Distance;
+        Public = 1;
+        Global = 0;
+        Internal = 0;
+        External = 1;
+        Monitored = 0;
+        Reserved = 1;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 10000.000000;
+    }
+
+    Variable
+    {
+        Name = Weapon_LodCutoff;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 10000.000000;
+        Initial Value = 10000.000000;
+        Min = -1.000000;
+        Max = 10000.000000;
+    }
+
+    Variable
+    {
+        Name = UnitMove_LodCutoff;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 10000.000000;
+        Initial Value = 10000.000000;
+        Min = -1.000000;
+        Max = 10000.000000;
+    }
+
+    Variable
+    {
+        Name = DefaultLodCutoff;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = -1.000000;
+        Initial Value = -1.000000;
+        Min = -1.000000;
+        Max = 10000.000000;
+    }
+
+    Variable
+    {
+        Name = UnitRumble_LodCutoff;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 256.000000;
+        Initial Value = 100.000000;
+        Min = -1.000000;
+        Max = 10000.000000;
+    }
+
+    Variable
+    {
+        Name = Rumble1;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 10.000000;
+    }
+
+    Variable
+    {
+        Name = WeaponBig_LodCutoff;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 10000.000000;
+        Initial Value = 10000.000000;
+        Min = -1.000000;
+        Max = 10000.000000;
+    }
+
+    Variable
+    {
+        Name = UAL_Rumble1;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 10.000000;
+    }
+
+    Variable
+    {
+        Name = UES_Rumble1;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 10.000000;
+    }
+
+    Variable
+    {
+        Name = URA_Rumble1;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 10.000000;
+    }
+
+    Variable
+    {
+        Name = UEL_RumbleTanks1;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 10.000000;
+    }
+
+    Variable
+    {
+        Name = CameraDistance;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 576.760559;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 100000.000000;
+    }
+
+    Variable
+    {
+        Name = Duck;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 1.000000;
+    }
+
+    Variable
+    {
+        Name = DuckLength;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.500000;
+        Initial Value = 0.500000;
+        Min = 0.000000;
+        Max = 10.000000;
+    }
+
+    Variable
+    {
+        Name = ZoomPercent;
+        Public = 1;
+        Global = 1;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 75.785828;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 100.000000;
+    }
+
+    Variable
+    {
+        Name = Angle;
+        Public = 1;
+        Global = 0;
+        Internal = 0;
+        External = 1;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 32.641476;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 180.000000;
+    }
+
+    RPC
+    {
+        Name = Rumble1;
+
+        RPC Curve
+        {
+            Name = Sound::ba0942a5-e61a-48a5-9285-fea484d50888;
+            Property = 0;
+            Sound = 1;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Rumble1;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 10.000000;
+                Y = -1215.030151;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = UAL_Rumble1;
+
+        RPC Curve
+        {
+            Name = Sound::9156eec0-2519-4e7d-8248-881cccdedb9d;
+            Property = 0;
+            Sound = 1;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = UAL_Rumble1;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 10.000000;
+                Y = -11.030121;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = UES_Rumble1;
+
+        RPC Curve
+        {
+            Name = Sound::f21a590b-ceca-42b4-8f18-51582e0fc0f4;
+            Property = 0;
+            Sound = 1;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = UES_Rumble1;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 10.000000;
+                Y = -11.030121;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = URA_Rumble1;
+
+        RPC Curve
+        {
+            Name = Sound::535cb54b-03a6-404e-8480-8204dc37e5af;
+            Property = 0;
+            Sound = 1;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = URA_Rumble1;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 10.000000;
+                Y = -11.030121;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = UEL_Rumble1;
+
+        RPC Curve
+        {
+            Name = Sound::2c5f08d4-46b1-4662-bb62-4f6c660b1e35;
+            Property = 0;
+            Sound = 1;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = UEL_RumbleTanks1;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 10.000000;
+                Y = -22.959869;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Attenuation;
+
+        RPC Curve
+        {
+            Name = Sound::de3d22a4-d199-4924-ab3f-4be3aefe39c8;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4287062800;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Distance;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 0.660400;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 794.044678;
+                Y = -2410.416504;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 2531.017334;
+                Y = -4854.166992;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 3449.131592;
+                Y = -9387.500000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 3746.898193;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Attenuation Weapons;
+
+        RPC Curve
+        {
+            Name = Sound::ce4a7159-3295-4d0d-af37-4b6625ce1df0;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4287389511;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Distance;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -11.030121;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 543.018311;
+                Y = -1049.638062;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 2506.203369;
+                Y = -1560.416748;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 4565.756836;
+                Y = -2500.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 6501.240723;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = AttackRelease_UnitMovement_Short;
+
+        RPC Curve
+        {
+            Name = 1::2aa78196-699a-4517-b0c3-d59e82d18a6a;
+            Property = 0;
+            Sound = 0;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = AttackTime;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 80.000000;
+                Y = -2446.113281;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 181.000000;
+                Y = -1315.924561;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 412.000000;
+                Y = -641.452881;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 666.000000;
+                Y = -257.278046;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 1000.000000;
+                Y = -2.003937;
+                Curve = 0;
+            }
+        }
+
+        RPC Curve
+        {
+            Name = 1::c57b377e-6c92-4d76-82c0-d9543ff0a793;
+            Property = 0;
+            Sound = 0;
+            Line Color = 4294901760;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = ReleaseTime;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 2991.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Attenuation Destroy;
+
+        RPC Curve
+        {
+            Name = Sound::61de13cf-0ac3-4d8d-a734-0bb8d1464634;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4289126945;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Distance;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 30.113205;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 87.189804;
+                Y = -5.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 326.704559;
+                Y = -648.145691;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 3101.737061;
+                Y = -2800.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 4863.523438;
+                Y = -4145.833008;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 6129.032227;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Attenuation Close Up;
+
+        RPC Curve
+        {
+            Name = Sound::b7937ff1-7500-4761-a266-994ab887ba25;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4293620379;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Distance;
+            }
+
+            RPC Point
+            {
+                X = 20.120724;
+                Y = -2.169800;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 198.511169;
+                Y = -462.500000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 500.000000;
+                Y = -2587.500000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 2456.575684;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = MusicRelease;
+
+        RPC Curve
+        {
+            Name = 1::0fe352bf-f21b-415c-ba38-4456267587f7;
+            Property = 0;
+            Sound = 0;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = ReleaseTime;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 1592.000000;
+                Y = -236.256271;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 3030.000000;
+                Y = -721.437195;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 4700.000000;
+                Y = -2021.542603;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 6061.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Attenuation ZoomOut;
+
+        RPC Curve
+        {
+            Name = Sound::6c4aa1bd-06e7-47d3-af96-941a17f504c0;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4283513994;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Distance;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 325.342468;
+                Y = -337.281372;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = AttackRelease2_Building_Weapons_Long;
+
+        RPC Curve
+        {
+            Name = 1::b08fd5fb-ddf8-4764-82e2-3b7c20ab68e0;
+            Property = 0;
+            Sound = 0;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = AttackTime;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 71.000000;
+                Y = -1799.170654;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 150.000000;
+                Y = -798.276367;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 292.000000;
+                Y = -236.256271;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 532.000000;
+                Y = 1.783905;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 14999.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+        }
+
+        RPC Curve
+        {
+            Name = 1::b7d7690c-0607-4488-96b8-852b35518d63;
+            Property = 0;
+            Sound = 0;
+            Line Color = 4294901760;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = ReleaseTime;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 1012.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Attenuation Close Up Micro;
+
+        RPC Curve
+        {
+            Name = Sound::5a9a37e5-671d-4e19-b6db-4a1dded1ddf0;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4292556404;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Distance;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 92.685951;
+                Y = -1146.910645;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 106.419502;
+                Y = -1802.296875;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 144.181259;
+                Y = -3086.585693;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 181.943008;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Duck;
+
+        RPC Curve
+        {
+            Name = Sound::5ebaca26-0a62-4b72-999a-74c5dfe63be4;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4288862961;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Duck;
+            }
+
+            RPC Point
+            {
+                X = 0.001733;
+                Y = 1.783905;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 0.528536;
+                Y = -1000.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Global_Ambient_Rumble_Zoom;
+
+        RPC Curve
+        {
+            Name = Sound::37a1122f-db0f-49d1-9ce8-5fa3a4440d4d;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4291469915;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = CameraDistance;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -2044.047974;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 323.834198;
+                Y = -1357.583374;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 841.968872;
+                Y = -977.091431;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 1360.103638;
+                Y = -670.111206;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 1813.471436;
+                Y = -408.857300;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 3659.326416;
+                Y = -0.436554;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Angle_Attenuation;
+
+        RPC Curve
+        {
+            Name = Sound::900c3e2c-35f4-4771-876d-6310ab656a64;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4283381679;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Angle;
+            }
+
+            RPC Point
+            {
+                X = 0.937386;
+                Y = 1.783905;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 45.233967;
+                Y = -612.969910;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 90.155975;
+                Y = -2021.542603;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 118.856148;
+                Y = -461.904419;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 180.000000;
+                Y = -22.959869;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = Music Att;
+
+        RPC Curve
+        {
+            Name = Sound::4fcffeb2-0fa1-4359-8128-8f75cd726e85;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4288885614;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Distance;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 2258.064453;
+                Y = -4606.250000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 7245.657715;
+                Y = -4500.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    Compression Preset
+    {
+        Name = ADPCM 256;
+        Xbox Format Tag = 357;
+        Target Sample Rate = 48000;
+        Quality = 75;
+        Find Best Quality = 0;
+        High Freq Cut = 0;
+        Loop = 0;
+        PC Format Tag = 2;
+        Samples Per Block = 256;
+    }
+
+    Compression Preset
+    {
+        Name = ADPCM 512;
+        Xbox Format Tag = 357;
+        Target Sample Rate = 48000;
+        Quality = 75;
+        Find Best Quality = 0;
+        High Freq Cut = 0;
+        Loop = 0;
+        PC Format Tag = 2;
+        Samples Per Block = 512;
+    }
+
+    Compression Preset
+    {
+        Name = ADPCM 128;
+        Xbox Format Tag = 357;
+        Target Sample Rate = 48000;
+        Quality = 60;
+        Find Best Quality = 0;
+        High Freq Cut = 0;
+        Loop = 0;
+        PC Format Tag = 2;
+        Samples Per Block = 128;
+    }
+}
+
+Wave Bank
+{
+    Name = A02_VO;
+    Xbox File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\.temp\build_DE_A02_VO\Xbox\A02_VO.xwb;
+    Windows File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\.temp\build_DE_A02_VO\Win\A02_VO.xwb;
+    Xbox Bank Path Edited = 0;
+    Windows Bank Path Edited = 0;
+    Streaming = 1;
+    Seek Tables = 1;
+    Compression Preset Name = ADPCM 256;
+    Xbox Bank Last Modified Low = 0;
+    Xbox Bank Last Modified High = 0;
+    PC Bank Last Modified Low = 3921796989;
+    PC Bank Last Modified High = 31001778;
+    Bank Last Revised Low = 3699536229;
+    Bank Last Revised High = 31001778;
+
+    Wave
+    {
+        Name = A02_Choir_D01_00789;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_D01_00789.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44107;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 591360;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M01_00798;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M01_00798.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 607744;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M01_00799;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M01_00799.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44072;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 325120;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M01_00800;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M01_00800.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44116;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 595456;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M01_00802;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M01_00802.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44081;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 306688;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M01_00803;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M01_00803.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44104;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 393216;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M01_00805;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M01_00805.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44081;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 460288;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M01_01568;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M01_01568.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44106;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 532992;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M02_00807;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M02_00807.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44101;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 772608;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M02_00813;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M02_00813.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44086;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 712192;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M02_00814;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M02_00814.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44103;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 1186816;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M02_00815;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M02_00815.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44110;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 835072;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M02_00816;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M02_00816.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44106;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 905728;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M02_00818;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M02_00818.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44078;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 417792;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M02_00819;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M02_00819.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44092;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 526848;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M02_00820;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M02_00820.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44110;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 685052;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M02_00821;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M02_00821.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44093;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 473600;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M02_00822;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M02_00822.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44121;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 366592;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M02_00826;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M02_00826.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44113;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 520192;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M02_01094;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M02_01094.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44107;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 496124;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M03_00829;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M03_00829.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44089;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 1004032;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M03_00831;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M03_00831.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44112;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 561664;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M03_00832;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M03_00832.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44097;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 779776;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M03_00833;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M03_00833.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44068;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 312320;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M03_00834;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M03_00834.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44074;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 292352;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M03_00836;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M03_00836.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44085;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 389632;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M03_00838;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M03_00838.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44090;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 458752;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M03_00839;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M03_00839.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44106;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 463872;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M03_00840;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M03_00840.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44115;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 536576;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M03_01095;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M03_01095.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 497664;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M03_01096;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M03_01096.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44123;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 450048;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M03_01150;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M03_01150.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44062;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 297984;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_M01_00801;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_M01_00801.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44110;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 243200;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_M02_00806;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_M02_00806.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44114;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 421888;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_M02_00817;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_M02_00817.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44075;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 342528;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_M02_00823;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_M02_00823.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44144;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 226812;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_M02_00824;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_M02_00824.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44126;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 263680;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_M03_00828;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_M03_00828.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44101;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 255488;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_M03_00830;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_M03_00830.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44148;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 186880;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_M03_00835;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_M03_00835.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44097;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 438272;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_T01_00790;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_T01_00790.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44155;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 196608;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_T01_00791;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_T01_00791.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44098;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 206848;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_T01_00792;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_T01_00792.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44126;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 374272;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_T01_00793;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_T01_00793.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44118;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 369664;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_T01_00794;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_T01_00794.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44099;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 288256;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_T01_00795;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_T01_00795.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44076;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 231936;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_T01_00796;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_T01_00796.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44120;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 187392;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Leopard11_T01_00797;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Leopard11_T01_00797.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44072;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 276480;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Marxon_M02_00808;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Marxon_M02_00808.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44097;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 510976;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Marxon_M02_00810;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Marxon_M02_00810.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44097;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 402432;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Marxon_M02_00812;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Marxon_M02_00812.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44096;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 960000;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Princess_M02_00811;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Princess_M02_00811.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44097;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 514048;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Toth_M02_00809;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Toth_M02_00809.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44107;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 489984;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_B03;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_B03.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 2778112;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_B01;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_B01.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44097;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 1398784;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_B02;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_B02.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 2427904;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+    Wave
+    {
+        Name = A02_Choir_M02_02670;
+        File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\extract_all\Voice\DE\A02_VO\A02_Choir_M02_02670.wav;
+        Build Settings Last Modified Low = 3699406307;
+        Build Settings Last Modified High = 31001778;
+        Compression Preset Name = ADPCM 256;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44084;
+            Bits Per Sample = 1;
+            Play Region Offset = 80;
+            Play Region Length = 389632;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3429932417;
+            Last Modified High = 31001587;
+        }
+    }
+
+}
+
+Sound Bank
+{
+    Name = A02_VO;
+    Xbox File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\.temp\build_DE_A02_VO\Xbox\A02_VO.xsb;
+    Windows File = I:\SteamLibrary\steamapps\common\Supreme Commander Forged Alliance\AudioProject_2\.temp\build_DE_A02_VO\Win\A02_VO.xsb;
+    Xbox Bank Path Edited = 0;
+    Windows Bank Path Edited = 0;
+    Bank Last Modified Low = 3967693027;
+    Bank Last Modified High = 31001778;
+    Header Last Modified High = 0;
+    Header Last Modified Low = 0;
+
+    Sound
+    {
+        Name = A02_Choir_D01_00789;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_D01_00789;
+                    Entry Index = 0;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M01_00798;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M01_00798;
+                    Entry Index = 1;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M01_00799;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M01_00799;
+                    Entry Index = 2;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M01_00800;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M01_00800;
+                    Entry Index = 3;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M01_00802;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M01_00802;
+                    Entry Index = 4;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M01_00803;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M01_00803;
+                    Entry Index = 5;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M01_00805;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M01_00805;
+                    Entry Index = 6;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M01_01568;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M01_01568;
+                    Entry Index = 7;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M02_00807;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M02_00807;
+                    Entry Index = 8;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M02_00813;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M02_00813;
+                    Entry Index = 9;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M02_00814;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M02_00814;
+                    Entry Index = 10;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M02_00815;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M02_00815;
+                    Entry Index = 11;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M02_00816;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M02_00816;
+                    Entry Index = 12;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M02_00818;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M02_00818;
+                    Entry Index = 13;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M02_00819;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M02_00819;
+                    Entry Index = 14;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M02_00820;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M02_00820;
+                    Entry Index = 15;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M02_00821;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M02_00821;
+                    Entry Index = 16;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M02_00822;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M02_00822;
+                    Entry Index = 17;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M02_00826;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M02_00826;
+                    Entry Index = 18;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M02_01094;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M02_01094;
+                    Entry Index = 19;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M03_00829;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M03_00829;
+                    Entry Index = 20;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M03_00831;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M03_00831;
+                    Entry Index = 21;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M03_00832;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M03_00832;
+                    Entry Index = 22;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M03_00833;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M03_00833;
+                    Entry Index = 23;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M03_00834;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M03_00834;
+                    Entry Index = 24;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M03_00836;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M03_00836;
+                    Entry Index = 25;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M03_00838;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M03_00838;
+                    Entry Index = 26;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M03_00839;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M03_00839;
+                    Entry Index = 27;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M03_00840;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M03_00840;
+                    Entry Index = 28;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M03_01095;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M03_01095;
+                    Entry Index = 29;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M03_01096;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M03_01096;
+                    Entry Index = 30;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M03_01150;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M03_01150;
+                    Entry Index = 31;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_M01_00801;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_M01_00801;
+                    Entry Index = 32;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_M02_00806;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_M02_00806;
+                    Entry Index = 33;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_M02_00817;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_M02_00817;
+                    Entry Index = 34;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_M02_00823;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_M02_00823;
+                    Entry Index = 35;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_M02_00824;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_M02_00824;
+                    Entry Index = 36;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_M03_00828;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_M03_00828;
+                    Entry Index = 37;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_M03_00830;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_M03_00830;
+                    Entry Index = 38;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_M03_00835;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_M03_00835;
+                    Entry Index = 39;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_T01_00790;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_T01_00790;
+                    Entry Index = 40;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_T01_00791;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_T01_00791;
+                    Entry Index = 41;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_T01_00792;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_T01_00792;
+                    Entry Index = 42;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_T01_00793;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_T01_00793;
+                    Entry Index = 43;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_T01_00794;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_T01_00794;
+                    Entry Index = 44;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_T01_00795;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_T01_00795;
+                    Entry Index = 45;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_T01_00796;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_T01_00796;
+                    Entry Index = 46;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Leopard11_T01_00797;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Leopard11_T01_00797;
+                    Entry Index = 47;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Marxon_M02_00808;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Marxon_M02_00808;
+                    Entry Index = 48;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Marxon_M02_00810;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Marxon_M02_00810;
+                    Entry Index = 49;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Marxon_M02_00812;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Marxon_M02_00812;
+                    Entry Index = 50;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Princess_M02_00811;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Princess_M02_00811;
+                    Entry Index = 51;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Toth_M02_00809;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Toth_M02_00809;
+                    Entry Index = 52;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_B01;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_B01;
+                    Entry Index = 54;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_B02;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_B02;
+                    Entry Index = 55;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_B03;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_B03;
+                    Entry Index = 53;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = A02_Choir_M02_02670;
+        Volume = -300;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = US;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = A02_VO;
+                    Bank Index = 0;
+                    Entry Name = A02_Choir_M02_02670;
+                    Entry Index = 56;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_D01_00789;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_D01_00789;
+            Index = 0;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M01_00798;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M01_00798;
+            Index = 1;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M01_00799;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M01_00799;
+            Index = 2;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M01_00800;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M01_00800;
+            Index = 3;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M01_00802;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M01_00802;
+            Index = 4;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M01_00803;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M01_00803;
+            Index = 5;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M01_00805;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M01_00805;
+            Index = 6;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M01_01568;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M01_01568;
+            Index = 7;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M02_00807;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M02_00807;
+            Index = 8;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M02_00813;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M02_00813;
+            Index = 9;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M02_00814;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M02_00814;
+            Index = 10;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M02_00815;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M02_00815;
+            Index = 11;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M02_00816;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M02_00816;
+            Index = 12;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M02_00818;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M02_00818;
+            Index = 13;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M02_00819;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M02_00819;
+            Index = 14;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M02_00820;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M02_00820;
+            Index = 15;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M02_00821;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M02_00821;
+            Index = 16;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M02_00822;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M02_00822;
+            Index = 17;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M02_00826;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M02_00826;
+            Index = 18;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M02_01094;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M02_01094;
+            Index = 19;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M03_00829;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M03_00829;
+            Index = 20;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M03_00831;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M03_00831;
+            Index = 21;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M03_00832;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M03_00832;
+            Index = 22;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M03_00833;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M03_00833;
+            Index = 23;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M03_00834;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M03_00834;
+            Index = 24;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M03_00836;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M03_00836;
+            Index = 25;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M03_00838;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M03_00838;
+            Index = 26;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M03_00839;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M03_00839;
+            Index = 27;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M03_00840;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M03_00840;
+            Index = 28;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M03_01095;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M03_01095;
+            Index = 29;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M03_01096;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M03_01096;
+            Index = 30;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M03_01150;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M03_01150;
+            Index = 31;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_M01_00801;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_M01_00801;
+            Index = 32;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_M02_00806;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_M02_00806;
+            Index = 33;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_M02_00817;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_M02_00817;
+            Index = 34;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_M02_00823;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_M02_00823;
+            Index = 35;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_M02_00824;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_M02_00824;
+            Index = 36;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_M03_00828;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_M03_00828;
+            Index = 37;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_M03_00830;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_M03_00830;
+            Index = 38;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_M03_00835;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_M03_00835;
+            Index = 39;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_T01_00790;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_T01_00790;
+            Index = 40;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_T01_00791;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_T01_00791;
+            Index = 41;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_T01_00792;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_T01_00792;
+            Index = 42;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_T01_00793;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_T01_00793;
+            Index = 43;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_T01_00794;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_T01_00794;
+            Index = 44;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_T01_00795;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_T01_00795;
+            Index = 45;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_T01_00796;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_T01_00796;
+            Index = 46;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Leopard11_T01_00797;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Leopard11_T01_00797;
+            Index = 47;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Marxon_M02_00808;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Marxon_M02_00808;
+            Index = 48;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Marxon_M02_00810;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Marxon_M02_00810;
+            Index = 49;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Marxon_M02_00812;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Marxon_M02_00812;
+            Index = 50;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Princess_M02_00811;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Princess_M02_00811;
+            Index = 51;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Toth_M02_00809;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Toth_M02_00809;
+            Index = 52;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_B01;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_B01;
+            Index = 53;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_B02;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_B02;
+            Index = 54;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_B03;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_B03;
+            Index = 55;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = A02_Choir_M02_02670;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = A02_Choir_M02_02670;
+            Index = 56;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 255;
+            Behavior = 0;
+
+            Crossfade
+            {
+                Fade In = 0;
+                Fade Out = 0;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+}
