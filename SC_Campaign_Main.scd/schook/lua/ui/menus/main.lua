@@ -43,8 +43,9 @@ function CreateUI()
             function()
                 origButtonCampaign()
             end,
-            nil, nil,
-            true, {worldCover = true, enterButton = 1, escapeButton = 2}
+            "<LOC _Cancel>",
+            nil,
+            true, {worldCover = true, enterButton = 1, escapeButton = 3}
         )
     end
 end

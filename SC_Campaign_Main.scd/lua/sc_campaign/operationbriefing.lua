@@ -89,7 +89,10 @@ function CreateUI(operationID, briefingData, faction, opDiff, playOp1Movie)
 		opQAI.loopMovie = '/movies/QAI_loop.sfd'
 		for i = 1, pTotal do														# check if all phase movies for QAI exist
 			local movName = '/movies/' .. opMovPfx .. '_B0' .. i .. '_QAI.sfd'
-			if table.getn(DiskFindFiles(movName)) == 0 then
+			# FA's DiskFindFiles requires (directory, pattern) - split the path
+			local _, _, dir = string.find(movName, "^(.*)/[^/]*$")
+			local _, _, pattern = string.find(movName, "^.*/([^/]*)$")
+			if table.getn(DiskFindFiles(dir, pattern)) == 0 then
 				opQAI.loop = true													# if not, use the generic QAI loop
 				break
 			end
@@ -539,6 +542,10 @@ function CreateUI(operationID, briefingData, faction, opDiff, playOp1Movie)
 			mov.control:Set(mov.movName)
 			mov.voSound = Sound( {Cue = opCue, Bank = opBank} )
 			mov.bgSound = Sound( {Cue = opCue, Bank = 'SC_Op_Briefing'} )
+			LOG('=== Briefing LoadMovie DEBUG ===')
+			LOG('  phase = ', phase, ' opMovPfx-derived: opCue = ', opCue, ' opBank = ', opBank)
+			LOG('  voSound = Sound({Cue=', opCue, ', Bank=', opBank, '})')
+			LOG('  bgSound = Sound({Cue=', opCue, ', Bank=SC_Op_Briefing})')
 		end
 	end
 	
@@ -551,12 +558,18 @@ function CreateUI(operationID, briefingData, faction, opDiff, playOp1Movie)
 			if mov.control.IsLoaded and mov.control:IsLoaded() then
 				mov.control:Show()
 				mov.control:Play()
+				LOG('=== Briefing PlayActiveMovie (loaded) DEBUG ===')
+				LOG('  phase = ', mov.phase, ' active = ', movTable.active)
+				LOG('  calling PlayVoice(voSound) and PlaySound(bgSound)')
 				mov.voSoundHandle = PlayVoice(mov.voSound)
 				mov.bgSoundHandle = PlaySound(mov.bgSound)
 			else
 				mov.control.OnLoaded = function()
 					mov.control:Show()
 					mov.control:Play()
+					LOG('=== Briefing PlayActiveMovie (OnLoaded) DEBUG ===')
+					LOG('  phase = ', mov.phase, ' active = ', movTable.active)
+					LOG('  calling PlayVoice(voSound) and PlaySound(bgSound)')
 					mov.voSoundHandle = PlayVoice(mov.voSound)
 					mov.bgSoundHandle = PlaySound(mov.bgSound)
 				end

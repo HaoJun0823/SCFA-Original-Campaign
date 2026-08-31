@@ -348,13 +348,13 @@ function MakeFactionUI(faction, parent, border)
             if facMovie then
                 facMovie:Show()
                 facMovie:Play()
-                warpSound[faction] = PlaySound(Sound({Cue = "UI_Warp_Click_" .. FactionData.Factions[FactionData.FactionIndexMap[faction]].SoundPrefix, Bank = "Interface",}))
+                warpSound[faction] = PlaySound(Sound({Cue = "UI_Warp_Click_" .. FactionData.Factions[FactionData.FactionIndexMap[faction]].SoundPrefix, Bank = "SC_Interface",}))
             end
 
             WaitSeconds(1.2)
 
             if facComMov then
-                facComSoundHandle = PlaySound(Sound({Cue = "UI_Warp_" .. FactionData.Factions[FactionData.FactionIndexMap[faction]].SoundPrefix .. "_Commander", Bank = "Interface",}))
+                facComSoundHandle = PlaySound(Sound({Cue = "UI_Warp_" .. FactionData.Factions[FactionData.FactionIndexMap[faction]].SoundPrefix .. "_Commander", Bank = "SC_Interface",}))
                 facComMov:Play()
                 facComMov:Show()
             end

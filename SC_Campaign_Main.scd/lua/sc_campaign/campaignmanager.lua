@@ -282,7 +282,9 @@ function OperationVictory(ovTable, skipDialog)
     
     if not skipDialog then
         import('/lua/ui/game/worldview.lua').UnlockInput()
-        import('/lua/ui/game/score.lua').SignalGameOver()
+        pcall(function()
+            import('/lua/ui/game/score.lua').SignalGameOver()
+        end)
         if not ovTable.factionVideo then
             UIUtil.ShowInfoDialog(
                 GetFrame(0),

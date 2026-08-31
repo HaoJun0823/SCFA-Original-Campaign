@@ -20,6 +20,16 @@ local creditsMovies = {
     cybran = 'FMV_Cybran_Credits',
 }
 
+-- SC original SC_FMV.xsb only has 13 cues. These cues have NO voice audio
+-- in the SC_FMV wave bank (background sound SC_FMV_BG has them, but voice
+-- bank does not). PlayVoice will fail with a warning for these cues.
+-- This is SC original behaviour - not a rebuild error.
+local missingVoiceCues = {
+    FMV_UEF_Intro_2 = true,
+    FMV_Aeon_Intro_2 = true,
+    FMV_UEF_Outro_2 = true,
+}
+
 local subtitleThread = false
 
 function DisplaySubtitles(textControl,captions)
@@ -74,18 +84,19 @@ function PlayCampaignMovie(movieName, over, checkPlayed, exitBehavior, globalPre
 	# fix the faction portion of the wavebank cue name, since the wavebank cue is case sensitive
 	# e.g. the movieName is "FMV_uef_Intro" but the cue in the wavebank is named "FMV_UEF_Intro"
 	# FMV_Campaign_Intro doesn't follow this rule, so is omitted
-	local cueName = movieName
+    local cueName = movieName
     local subtitleKey = movieName
-	if cueName != 'FMV_Campaign_Intro' then
-	    if cue then
-	        cueName = cue
-        subtitleKey = cue
-	    else
-		cueName = FixCueName(cueName)
-        subtitleKey = cueName
-      end
-	end
-    #LOG('CueName = ',cueName)
+    if cueName != 'FMV_Campaign_Intro' then
+        if cue then
+            cueName = cue
+            subtitleKey = cue
+        else
+            cueName = FixCueName(cueName)
+            subtitleKey = cueName
+          end
+    end
+    LOG('  cueName (final) = ', cueName)
+    LOG('  subtitleKey = ', subtitleKey)
 
     local parent = UIUtil.CreateScreenGroup(GetFrame(over:GetRootFrame():GetTargetHead()), "Campaign Movie ScreenGroup")
     parent.Depth:Set(function() return over.Depth() + 1 end)
@@ -131,13 +142,15 @@ function PlayCampaignMovie(movieName, over, checkPlayed, exitBehavior, globalPre
     end
 
     movie.OnLoaded = function(self)
-		movie.voice = PlayVoice(Sound( {Cue = cueName, Bank = 'FMV'} ))
-		movie.sound = PlaySound(Sound( {Cue = cueName, Bank = 'SC_FMV_BG'} ))
-		movie:Play()
+        if not missingVoiceCues[cueName] then
+            movie.voice = PlayVoice(Sound( {Cue = cueName, Bank = 'SC_FMV'} ))
+        end
+        movie.sound = PlaySound(Sound( {Cue = cueName, Bank = 'SC_FMV_BG'} ))
+        movie:Play()
         if captions then
             DisplaySubtitles(textArea,captions)
-	    end
-	end
+        end
+    end
 
     movie:Set("/movies/" .. movieName .. ".sfd")
 
@@ -150,8 +163,10 @@ function PlayCampaignMovie(movieName, over, checkPlayed, exitBehavior, globalPre
         end
         movie:Stop()
         movie.OnLoaded = nil
-        StopSound(movie.voice,true)
-        StopSound(movie.sound,true)
+        if movie.voice then
+            StopSound(movie.voice, true)
+        end
+        StopSound(movie.sound, true)
         parent:Destroy()
         if exitBehavior != nil then
             exitBehavior()
@@ -199,16 +214,15 @@ function PlayCredits(faction, over)
     LayoutHelpers.FillParentPreserveAspectRatio(movie, parent)
     movie:DisableHitTest()    -- get clicks to parent group
 
-    movie:Set("/movies/FMV_Credits.sfd")
+    movie:Set("/movies/FMV_Credits.sfd",
+          Sound( {Cue = cueName, Bank = 'SC_FMV_BG'} ))
     movie.OnLoaded = function(self)
-		movie.sound = PlaySound(Sound( {Cue = cueName, Bank = 'SC_FMV_BG'} ))
 		movie:Play()
 	end
 
     local function LeaveMovie()
             RemoveInputCapture(parent)
             movie:Stop()
-            StopSound(movie.sound,true)
             parent:Destroy()
     end
 
@@ -227,18 +241,15 @@ function PlayCredits(faction, over)
 end
 
 function FixCueName(cueName)
-	# transform input cuename to a more case-correct cuename. wavebank cues are case-sensitive and differ in case on the faction component.
-	local suffix = nil
-	suffix = cueName:sub(5)											# strip off the opening 'FMV_' (e.g. FMV_uef_Intro_1 -> uef_Intro_1)
-	local facName = suffix:sub(1, suffix:find('_') - 1)	 			# grab faction portion of movieName (e.g. uef_Intro_1 -> uef)
-	suffix = suffix:sub(string.sub(suffix:find('_'), 1, 1))			# get everything from the next underscore onward for later (e.g. uef_Intro_1 -> _Intro_1)
-	
-	local factionData = import('/lua/factions.lua')
-	facName = factionData.Factions[factionData.FactionIndexMap[facName]].SoundPrefix
-    if not facName then	
-		LOG('ERROR -- unknown faction: ' , facName)
-	end
-	
-	cueName = 'FMV_' .. facName .. suffix									# e.g. FMV_UEF_Intro_1
-	return cueName
+    local suffix = nil
+    suffix = cueName:sub(5)
+    local facName = suffix:sub(1, suffix:find('_') - 1)
+    suffix = suffix:sub(string.sub(suffix:find('_'), 1, 1))
+    local factionData = import('/lua/factions.lua')
+    facName = factionData.Factions[factionData.FactionIndexMap[facName]].SoundPrefix
+    if not facName then
+        LOG('ERROR -- unknown faction: ' , facName)
+    end
+    cueName = 'FMV_' .. facName .. suffix
+    return cueName
 end
