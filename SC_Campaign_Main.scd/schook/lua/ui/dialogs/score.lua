@@ -1,19 +1,8 @@
 --*****************************************************************************
 --* File: schook/lua/ui/dialogs/score.lua
 --* Summary: Hook CreateDialog to route SC campaign (SCCA_) ops to a custom
---*          SC-style campaign score screen (text debriefing + objective list
---*          + medals + faction-themed backgrounds) instead of FA's video-based
---*          debrief which crashes on SC ops.
---*
---*          This faithfully recreates SC's campaignscore.lua layout using
---*          extracted SC textures:
---*          - Faction background (/dialogs/score-{faction}/background_bmp.dds)
---*          - Faction border    (/dialogs/score-{faction}/back_brd_*.dds)
---*          - Faction panels    (/dialogs/score-{faction}/panels_bmp.dds)
---*          - Faction text box  (/dialogs/score-{faction}/text-box_bmp.dds)
---*          - Faction buttons   (/medium-{faction}-btn/medium02, /{faction}-btn-small/small)
---*          - Faction scrollbar (/small-vert_scroll-{faction}/)
---*          - Mission medals    (/missions/medal-*.dds)
+--*          SC-style score screen (text debriefing + objective list + medals)
+--*          instead of FA's video-based debrief which crashes on SC ops.
 --*****************************************************************************
 
 -- Save original FA CreateDialog before we override it
@@ -24,8 +13,9 @@ local LayoutHelpers = import('/lua/maui/layouthelpers.lua')
 local EffectHelpers = import('/lua/maui/effecthelpers.lua')
 local Group = import('/lua/maui/group.lua').Group
 local Bitmap = import('/lua/maui/bitmap.lua').Bitmap
-local Button = import('/lua/maui/button.lua').Button
 local Text = import('/lua/maui/text.lua').Text
+local Movie = import('/lua/maui/movie.lua').Movie
+local WrapText = import('/lua/maui/text.lua').WrapText
 local MultiLineText = import('/lua/maui/multilinetext.lua').MultiLineText
 local Checkbox = import('/lua/maui/checkbox.lua').Checkbox
 local Tooltip = import('/lua/ui/game/tooltip.lua')
@@ -33,60 +23,22 @@ local ItemList = import('/lua/maui/itemlist.lua').ItemList
 local CampaignManager = import('/lua/ui/campaign/campaignmanager.lua')
 local Prefs = import('/lua/user/prefs.lua')
 
-local scGUI = false
+local scDialog = false
 
--- Faction fonts like SC original
-local facFont = {
-    uef = {
-        font = "Zeroes Three",
-        titleSize = 20,
-        titleOffset = 7,
-        color = 'badbdb',
-        color2 = '00FFFF',
-        color3 = '01aec2',
-    },
-    cybran = {
-        font = "Wintermute",
-        titleSize = 22,
-        titleOffset = 7,
-        color = 'f3c7ae',
-        color2 = 'FF9900',
-        color3 = 'dd2221',
-    },
-    aeon = {
-        font = "Butterbelly",
-        titleSize = 24,
-        titleOffset = 3,
-        color = 'baF0ba',
-        color2 = '00FF00',
-        color3 = '02b217',
-    },
-}
-
-local facAmbSound = {
-    uef = Sound({ Cue = 'AMB_UEF_OP_Briefing', Bank = 'SC_AmbientTest' }),
-    cybran = Sound({ Cue = 'AMB_CYBRAN_OP_Briefing', Bank = 'SC_AmbientTest' }),
-    aeon = Sound({ Cue = 'AMB_AEON_OP_Briefing', Bank = 'SC_AmbientTest' }),
-}
-
-local factionColors = {
-    cybran = 'orange',
-    uef = 'cyan',
-    aeon = 'FF55FF00',
-}
-
-local PositionData = {
-    DataSections = { 24, 150, 357 },
-}
-
--- Convert opKey to faction key: SCCA_E01 -> uef, SCCA_A01 -> aeon, SCCA_R01 -> cybran
+-- Faction key from opKey: SCCA_E01 -> uef, SCCA_A01 -> aeon, SCCA_R01 -> cybran
 local function OpKeyToFaction(opKey)
     local factionChar = string.upper(string.sub(opKey, 6, 6))
     local factionMap = { E = 'uef', A = 'aeon', R = 'cybran' }
     return factionMap[factionChar] or 'uef'
 end
 
--- Get player nickname
+-- Faction display name for title
+local function FactionDisplayName(faction)
+    local names = { uef = 'UEF', aeon = 'Aeon', cybran = 'Cybran' }
+    return names[faction] or faction
+end
+
+-- Get player nickname from armies table
 local function GetPlayerName()
     local armies = GetArmiesTable()
     if armies and armies.focusArmy and armies.armiesTable then
@@ -98,781 +50,467 @@ local function GetPlayerName()
     return 'Commander'
 end
 
--- Format game time seconds as HH:MM:SS
+-- Check if a texture file exists on disk
+local function TextureExists(path)
+    return DiskGetFileInfo(path)
+end
+
+-- Format game time as HH:MM:SS
 local function FormatGameTime()
-    local seconds = math.floor(GetGameTimeSeconds())
+    local seconds = math.floor(GetGameTime())
     local hours = math.floor(seconds / 3600)
     local mins = math.floor(math.mod(seconds, 3600) / 60)
     local secs = math.mod(seconds, 60)
     return string.format("%02d:%02d:%02d", hours, mins, secs)
 end
 
--- Create SC-style faction border
-local function CreateBorder(frame, faction)
-    local borderTable = {}
-
-    borderTable.topMiddle = Bitmap(scGUI.bg, UIUtil.UIFile('/dialogs/score-' .. faction .. '/back_brd_horz_um.dds'))
-    borderTable.topLeft = Bitmap(scGUI.bg, UIUtil.UIFile('/dialogs/score-' .. faction .. '/back_brd_ul.dds'))
-    borderTable.topRight = Bitmap(scGUI.bg, UIUtil.UIFile('/dialogs/score-' .. faction .. '/back_brd_ur.dds'))
-    borderTable.topRightStretch = Bitmap(scGUI.bg, UIUtil.UIFile('/dialogs/score-' .. faction .. '/back_brd_horz_umr.dds'))
-    borderTable.topLeftStretch = Bitmap(scGUI.bg, UIUtil.UIFile('/dialogs/score-' .. faction .. '/back_brd_horz_uml.dds'))
-
-    borderTable.bottomLeft = Bitmap(scGUI.bg, UIUtil.UIFile('/dialogs/score-' .. faction .. '/back_brd_ll.dds'))
-    borderTable.bottomRight = Bitmap(scGUI.bg, UIUtil.UIFile('/dialogs/score-' .. faction .. '/back_brd_lr.dds'))
-    borderTable.bottomLeftStretch = Bitmap(scGUI.bg, UIUtil.UIFile('/dialogs/score-' .. faction .. '/back_brd_horz_lml.dds'))
-    borderTable.bottomRightStretch = Bitmap(scGUI.bg, UIUtil.UIFile('/dialogs/score-' .. faction .. '/back_brd_horz_lmr.dds'))
-
-    LayoutHelpers.AtHorizontalCenterIn(borderTable.topMiddle, frame)
-    LayoutHelpers.AtTopIn(borderTable.topMiddle, frame)
-
-    borderTable.topLeft.Left:Set(frame.Left)
-    borderTable.topRight.Right:Set(frame.Right)
-    borderTable.topLeft.Top:Set(frame.Top)
-    borderTable.topRight.Top:Set(frame.Top)
-
-    borderTable.bottomLeft.Left:Set(frame.Left)
-    borderTable.bottomRight.Right:Set(frame.Right)
-    borderTable.bottomLeft.Bottom:Set(frame.Bottom)
-    borderTable.bottomRight.Bottom:Set(frame.Bottom)
-
-    borderTable.topLeftStretch.Top:Set(borderTable.topLeft.Top)
-    borderTable.topRightStretch.Top:Set(borderTable.topLeft.Top)
-
-    borderTable.bottomLeftStretch.Top:Set(borderTable.bottomLeft.Top)
-    borderTable.bottomRightStretch.Top:Set(borderTable.bottomRight.Top)
-    borderTable.bottomLeftStretch.Bottom:Set(borderTable.bottomLeft.Bottom)
-    borderTable.bottomRightStretch.Bottom:Set(borderTable.bottomRight.Bottom)
-
-    borderTable.topLeftStretch.Left:Set(borderTable.topLeft.Right)
-    borderTable.topLeftStretch.Right:Set(borderTable.topMiddle.Left)
-    borderTable.topRightStretch.Left:Set(borderTable.topMiddle.Right)
-    borderTable.topRightStretch.Right:Set(borderTable.topRight.Left)
-
-    borderTable.bottomLeftStretch.Left:Set(borderTable.bottomLeft.Right)
-    borderTable.bottomLeftStretch.Right:Set(borderTable.bottomRightStretch.Left)
-    borderTable.bottomRightStretch.Right:Set(borderTable.bottomRight.Left)
-
-    return borderTable
+-- Helper: create a border group like FA's CreateBorderGroup (reuse FA function)
+local function CreateBorderGroupSafe(parent)
+    -- FA's score.lua defines CreateBorderGroup as a global; call it if available
+    if CreateBorderGroup then
+        return CreateBorderGroup(parent)
+    end
+    -- Fallback: simple group
+    return Group(parent)
 end
 
--- Build objective log from FA's objective table (simplified vs SC's Widgets)
-local function FormatObjectiveInfo()
-    local retTable = {}
-    local sortedCom = {}
-    local sortedFail = {}
-
-    local ok, obTable = pcall(function()
-        return import('/lua/ui/game/objectives2.lua').GetCurrentObjectiveTable()
-    end)
-    if not ok or not obTable then return retTable end
-
-    for key, obj in obTable do
-        local entry = {
-            title = obj.title or key,
-            type = obj.type or 'primary',
-            Status = obj.complete or 'incomplete',
-            StartTime = nil,
-            EndTime = nil,
-            HideIcon = true,
-        }
-        if obj.complete == 'complete' then
-            table.insert(sortedCom, entry)
-        else
-            table.insert(sortedFail, entry)
-        end
-    end
-
-    local index = 1
-    local function SortFunc(t1, t2)
-        return false -- preserve original order
-    end
-
-    if table.getn(sortedCom) > 0 then
-        retTable[index] = { type = 'title', title = '<LOC objui_0003>', color = 'ff5fbde9' }
-        index = index + 1
-        table.sort(sortedCom, SortFunc)
-        for i, v in sortedCom do
-            retTable[index] = v
-            index = index + 1
-        end
-    end
-    if table.getn(sortedFail) > 0 then
-        retTable[index] = { type = 'title', title = '<LOC objui_0004>', color = 'ffe95f5f' }
-        index = index + 1
-        table.sort(sortedFail, SortFunc)
-        for i, v in sortedFail do
-            retTable[index] = v
-            index = index + 1
-        end
-    end
-
-    return retTable
-end
-
--- ============================================================================
--- Main SC campaign score screen builder
--- ============================================================================
+-- Build SC-style campaign score screen
 local function CreateSCCampaignScoreScreen(victory, operationVictoryTable)
-    local opId = operationVictoryTable.opKey
-    local faction = OpKeyToFaction(opId)
+    local opKey = operationVictoryTable.opKey
+    local faction = OpKeyToFaction(opKey)
     local playerName = GetPlayerName()
 
-    -- Clean up previous dialog
-    if scGUI then
-        if scGUI.bg then scGUI.bg:Destroy() end
-        scGUI = false
-    end
-
-    if scGUI then scGUI:Destroy() scGUI = false end
-
-    scGUI = {
-        panel = false,
-        bg = false,
-        statSections = {},
-        continueBtn = false,
-        timeFieldTitle = false,
-        elapsedTime = false,
-        DebriefPanel = false,
-        DebriefContainer = false,
-        DebriefDisplay = {},
-        ObjPanel = false,
-        ObjContainer = false,
-        ObjEntries = {},
-        detailEntries = {},
-    }
-
-    -- scoreScreenActive/SessionEndGame/DisableWorldSounds/StopAllSounds
-    -- are already called in the CreateDialog override (ForkThread parent)
+    scoreScreenActive = true
+    SessionEndGame()
+    DisableWorldSounds()
+    StopAllSounds()
     ConExecute("ren_Oblivion true")
-
-    local ambSound = facAmbSound[faction]
-    local playAmbSound = PlaySound(ambSound)
 
     local frame = GetFrame(0)
 
-    -- Background
-    scGUI.bg = Bitmap(frame, UIUtil.UIFile('/dialogs/score-' .. faction .. '/background_bmp.dds'))
-    LayoutHelpers.FillParent(scGUI.bg, frame)
-    scGUI.bg.Depth:Set(frame:GetTopmostDepth() + 1)
+    -- Destroy existing dialog if any
+    if scDialog then
+        scDialog:Destroy()
+        scDialog = false
+    end
 
-    -- Border
-    scGUI.bg.border = CreateBorder(frame, faction)
+    GetCursor():Show()
 
-    -- Main panels
-    scGUI.panel = Bitmap(scGUI.bg, UIUtil.UIFile('/dialogs/score-' .. faction .. '/panels_bmp.dds'))
-    scGUI.panel.Top:Set(function()
-        return 48 + math.floor((frame.Height() - 48 - 79 - scGUI.panel.Height()) / 2)
+    -- Main dialog background (reuse FA's skin)
+    scDialog = Bitmap(frame)
+    scDialog:SetRenderPass(UIUtil.UIRP_PostGlow)
+    scDialog.Depth:Set(frame:GetTopmostDepth() + 1)
+    scDialog:SetNeedsFrameUpdate(true)
+    scDialog:SetSolidColor('FF000000')
+    scDialog.OnFrame = function(self, delta)
+        self:SetNeedsFrameUpdate(false)
+    end
+    LayoutHelpers.FillParent(scDialog, frame)
+
+    -- Ambient sound
+    local ambientSounds = PlaySound(Sound({ Cue = "AMB_SER_OP_Briefing", Bank = "AmbientTest" }))
+    scDialog.OnDestroy = function(self)
+        StopSound(ambientSounds)
+    end
+
+    -- Background movie (FA menu background)
+    local movieBG = Movie(scDialog, '/movies/menu_background.sfd')
+    movieBG.Height:Set(frame.Height)
+    movieBG.Width:Set(function()
+        local ratio = frame.Height() / 1024
+        return 1824 * ratio
     end)
-    LayoutHelpers.AtHorizontalCenterIn(scGUI.panel, frame)
-    scGUI.bg.OnDestroy = function(self)
-        ConExecute("ren_Oblivion false")
+    movieBG.OnLoaded = function(self)
+        self:Loop(true)
+        self:Play()
     end
+    LayoutHelpers.AtCenterIn(movieBG, frame)
+    movieBG:DisableHitTest()
 
-    -- Operation title
-    local opNameText = opId
-    local okOp, opStrings = pcall(import, '/maps/' .. opId .. '/' .. opId .. '_strings.lua')
-    if okOp and opStrings and opStrings.OPERATION_NAME then
-        opNameText = opStrings.OPERATION_NAME
+    -- Main panel
+    local bg = Bitmap(movieBG, UIUtil.UIFile('/scx_menu/score-victory-defeat/panel_bmp.dds'))
+    LayoutHelpers.AtCenterIn(bg, frame)
+    bg.brackets = UIUtil.CreateDialogBrackets(bg, 40, 30, 40, 30)
+
+    -- Title
+    local titleText
+    if victory then
+        titleText = "<LOC SCORE_0055>Operation Successful"
+    else
+        titleText = "<LOC SCORE_0056>Operation Failed"
     end
-    scGUI.title = UIUtil.CreateText(scGUI.panel, opNameText, facFont[faction].titleSize, facFont[faction].font)
-    scGUI.title:SetColor(facFont[faction].color2)
-    LayoutHelpers.AtHorizontalCenterIn(scGUI.title, frame)
-    LayoutHelpers.AtTopIn(scGUI.title, frame, facFont[faction].titleOffset)
+    bg.title = UIUtil.CreateText(bg, LOC(titleText), 20, UIUtil.titleFont)
+    LayoutHelpers.AtHorizontalCenterIn(bg.title, bg)
+    LayoutHelpers.AtTopIn(bg.title, bg, 28)
+
+    -- Operation name subtitle
+    local opNameText = ''
+    local ok, opStrings = pcall(import, '/maps/' .. opKey .. '/' .. opKey .. '_strings.lua')
+    if ok and opStrings and opStrings.OPERATION_NAME then
+        opNameText = LOC(opStrings.OPERATION_NAME)
+    else
+        opNameText = opKey
+    end
+    bg.opName = UIUtil.CreateText(bg, opNameText, 14, UIUtil.bodyFont)
+    LayoutHelpers.AtHorizontalCenterIn(bg.opName, bg)
+    LayoutHelpers.AtTopIn(bg.opName, bg, 55)
 
     -- Game time
-    scGUI.timeFieldTitle = UIUtil.CreateText(scGUI.panel, LOC('<LOC SCORE_0029>Game Time:'), 16, "Arial")
-    LayoutHelpers.AtLeftTopIn(scGUI.timeFieldTitle, scGUI.panel, 75, 574)
+    local elapsedTimeLabel = UIUtil.CreateText(bg, "<LOC SCORE_0029>Game Time:", 16, UIUtil.bodyFont)
+    LayoutHelpers.AtLeftTopIn(elapsedTimeLabel, bg, 760, 75)
+    local elapsedTimeValue = UIUtil.CreateText(bg, FormatGameTime(), 16, UIUtil.bodyFont)
+    LayoutHelpers.RightOf(elapsedTimeValue, elapsedTimeLabel, 5)
 
-    scGUI.elapsedTime = UIUtil.CreateText(scGUI.panel, FormatGameTime(), 16, "Arial Bold")
-    LayoutHelpers.AtLeftTopIn(scGUI.elapsedTime, scGUI.panel, 220, 574)
-    scGUI.elapsedTime:SetColor('fff79e00')
+    -------------------------------------------------
+    -- Left side: Debriefing text area
+    -------------------------------------------------
+    local debriefGroup = CreateBorderGroupSafe(bg)
+    LayoutHelpers.AtLeftTopIn(debriefGroup, bg, 40, 90)
+    debriefGroup.Height:Set(390)
+    debriefGroup.Width:Set(445)
 
-    ------------------------------------------------
-    -- Continue button (medium faction button)
-    ------------------------------------------------
-    scGUI.continueBtn = UIUtil.CreateButtonStd(scGUI.panel, '/medium-' .. faction .. '-btn/medium02', '<LOC _Continue>', 20, 2)
-    LayoutHelpers.AtRightIn(scGUI.continueBtn, scGUI.bg.border.bottomRight, 80)
-    LayoutHelpers.AtBottomIn(scGUI.continueBtn, scGUI.bg.border.bottomRight, 6)
-    Tooltip.AddButtonTooltip(scGUI.continueBtn, 'PostScore_Quit', 1)
-
-    scGUI.continueBtn.glow = Bitmap(scGUI.continueBtn, UIUtil.UIFile('/medium-' .. faction .. '-btn/medium02_btn_glow.dds'))
-    LayoutHelpers.AtCenterIn(scGUI.continueBtn.glow, scGUI.continueBtn)
-    scGUI.continueBtn.glow:SetAlpha(0)
-    scGUI.continueBtn.glow:DisableHitTest()
-
-    scGUI.continueBtn.pulse = Bitmap(scGUI.continueBtn, UIUtil.UIFile('/medium-' .. faction .. '-btn/medium02_btn_glow.dds'))
-    LayoutHelpers.AtCenterIn(scGUI.continueBtn.pulse, scGUI.continueBtn)
-    scGUI.continueBtn.pulse:DisableHitTest()
-    EffectHelpers.Pulse(scGUI.continueBtn.pulse, 2, 0, .3)
-
-    scGUI.continueBtn.label:SetColor(factionColors[faction])
-    scGUI.continueBtn.OnRolloverEvent = function(self, event)
-        if event == 'enter' then
-            EffectHelpers.FadeIn(self.glow, .25, 0, 1)
-            self.label:SetColor('white')
-        elseif event == 'down' then
-            self.label:SetColor('black')
-        else
-            EffectHelpers.FadeOut(self.glow, .25, 1, 0)
-            self.label:SetColor(factionColors[faction])
-        end
-    end
-
-    -- Skip button (small faction button)
-    scGUI.skipBtn = UIUtil.CreateButtonStd(scGUI.panel, '/' .. faction .. '-btn-small/small', '<LOC _Skip>', 16)
-    LayoutHelpers.AtBottomIn(scGUI.skipBtn, scGUI.bg.border.bottomLeft, -8)
-    LayoutHelpers.AtLeftIn(scGUI.skipBtn, scGUI.bg.border.bottomRight, -12)
-    scGUI.skipBtn.label:SetColor(factionColors[faction])
-    scGUI.skipBtn.OnRolloverEvent = function(self, event)
-        if event == 'enter' then
-            self.label:SetColor('white')
-        elseif event == 'exit' then
-            self.label:SetColor(factionColors[faction])
-        elseif event == 'down' then
-            self.label:SetColor('black')
-        end
-    end
-
-    -- Restart button
-    scGUI.restartBtn = UIUtil.CreateButtonStd(scGUI.panel, '/' .. faction .. '-btn-small/small', '<LOC SCORE_0031>Restart', 16)
-    LayoutHelpers.RightOf(scGUI.restartBtn, scGUI.skipBtn, -25)
-    scGUI.restartBtn.label:SetColor(factionColors[faction])
-    scGUI.restartBtn.OnRolloverEvent = function(self, event)
-        if event == 'enter' then
-            self.label:SetColor('white')
-        elseif event == 'exit' then
-            self.label:SetColor(factionColors[faction])
-        elseif event == 'down' then
-            self.label:SetColor('black')
-        end
-    end
-
-    scGUI.restartBtn.OnClick = function(self)
-        if playAmbSound then StopSound(playAmbSound, true) end
-        RestartSession()
-    end
-
-    -- Button click logic
-    -- Set AutoContinue for both victory and defeat so that StartFrontEndUI
-    -- (hooked in schook/lua/ui/uimain.lua) can route back to the correct
-    -- faction campaign screen via AutoLaunchOperation().
-    --   - Victory: AutoLaunchOperation launches next op briefing (or main
-    --     menu if this was the last mission of the faction).
-    --   - Defeat:  AutoLaunchOperation goes to selectcampaign(faction).
-    local function endgame()
-        local okCM, cm = pcall(import, '/lua/sc_campaign/campaignmanager.lua')
-        if okCM and cm and cm.SetAutoContinueOpStatus then
-            cm.SetAutoContinueOpStatus(victory, opId, operationVictoryTable.difficulty)
-        end
-        ExitGame()
-    end
-
-    if victory then
-        -- Last mission of each faction: label "Finish"
-        if string.sub(opId, 7) == '06' then
-            scGUI.continueBtn.label:SetText(LOC('<LOC SCORE_0061>Finish'))
-        end
-        scGUI.continueBtn.OnClick = function(self)
-            if playAmbSound then StopSound(playAmbSound, true) end
-            endgame()
-        end
-        scGUI.skipBtn:Disable()
-    else
-        Tooltip.AddButtonTooltip(scGUI.skipBtn, 'CampaignScore_Skip', 1)
-        Tooltip.AddButtonTooltip(scGUI.restartBtn, 'CampaignScore_Restart', 1)
-
-        scGUI.continueBtn.OnClick = function(self, modifiers)
-            if playAmbSound then StopSound(playAmbSound, true) end
-            endgame()
-        end
-        scGUI.skipBtn.OnClick = function(self)
-            if playAmbSound then StopSound(playAmbSound, true) end
-            operationVictoryTable.allBonus = true
-            operationVictoryTable.allPrimary = true
-            operationVictoryTable.allSecondary = true
-            operationVictoryTable.success = true
-            local okCM, cm = pcall(import, '/lua/sc_campaign/campaignmanager.lua')
-            if okCM and cm and cm.OperationVictory then
-                cm.OperationVictory(operationVictoryTable, true)
-            end
-            endgame()
-        end
-    end
-
-    -- MakeInputModal calls AddInputCapture internally on scGUI.bg
-    UIUtil.MakeInputModal(scGUI.bg, function() scGUI.continueBtn:OnClick() end, function() scGUI.continueBtn:OnClick() end)
-
-    ------------------------------------------------
-    -- Stat Area (3 DataSections)
-    ------------------------------------------------
-    local ArmiesTable = GetArmiesTable()
-    -- Original FA (lua.scd) syncs score data via Sync.Score ->
-    -- scoreaccum.lua:UpdateScoreData() (see UserSync.lua).
-    -- NOTE: hotstats.lua is FAF-only and does NOT exist in vanilla lua.scd.
-    local ScoreData = import('/lua/ui/game/scoreaccum.lua').scoreData
-
-    local DataSections = {
-        {
-            title = '<LOC SCORE_0059>',
-            color = 'fffa0000',
-            catKey = 'general',
-            catCol = 'count',
-            sections = {
-                { title = '<LOC SCORE_0002>', scorekey = 'kills',    icon = UIUtil.UIFile('/dialogs/score-uef/icon-kills_bmp.dds') },
-                { title = '<LOC SCORE_0004>', scorekey = 'lost',     icon = UIUtil.UIFile('/dialogs/score-uef/icon-loss_bmp.dds') },
-                { title = '<LOC SCORE_0060>Kill/Loss Ratio', scoreratio = true, icon = UIUtil.UIFile('/dialogs/score-uef/icon-kill-death_bmp.dds') },
-            }
-        },
-        {
-            title = '<LOC SCORE_0018>Units Built',
-            color = 'ff00d5db',
-            catKey = 'units',
-            catCol = 'built',
-            sections = {
-                { title = '<LOC SCORE_0012>', scorekey = 'land',         icon = UIUtil.UIFile('/dialogs/score-uef/icon-land_bmp.dds') },
-                { title = '<LOC SCORE_0014>', scorekey = 'air',          icon = UIUtil.UIFile('/dialogs/score-uef/icon-air_bmp.dds') },
-                { title = '<LOC SCORE_0013>', scorekey = 'naval',        icon = UIUtil.UIFile('/dialogs/score-uef/icon-naval_bmp.dds') },
-                { title = '<LOC SCORE_0015>', scorekey = 'structures',   icon = UIUtil.UIFile('/dialogs/score-uef/icon-structure_bmp.dds') },
-                { title = '<LOC SCORE_0016>', scorekey = 'experimental', icon = UIUtil.UIFile('/dialogs/score-uef/icon_experimental.dds') },
-                { title = '<LOC tooltipui0253>', scoretotal = true,      icon = UIUtil.UIFile('/dialogs/score-uef/icon-cdr_bmp.dds') },
-            }
-        },
-        {
-            title = '<LOC SCORE_0020>',
-            color = 'ff91d003',
-            catKey = 'resources',
-            catCol = 'total',
-            sections = {
-                { title = '<LOC SCORE_0021>', scorekey = 'massin',    icon = UIUtil.UIFile('/dialogs/score-uef/icon-mass_bmp.dds') },
-                { title = '<LOC SCORE_0022>', scorekey = 'massout',   icon = UIUtil.UIFile('/dialogs/score-uef/icon-mass_bmp.dds') },
-                { title = '<LOC SCORE_0023>Mass Wasted', catKey2 = 'resources', scorekey = 'massover', icon = UIUtil.UIFile('/dialogs/score-uef/icon-mass_bmp.dds') },
-                { title = '<LOC SCORE_0024>', scorekey = 'energyin',  icon = UIUtil.UIFile('/dialogs/score-uef/icon-energy_bmp.dds') },
-                { title = '<LOC SCORE_0025>', scorekey = 'energyout', icon = UIUtil.UIFile('/dialogs/score-uef/icon-energy_bmp.dds') },
-                { title = '<LOC SCORE_0026>Energy Wasted', catKey2 = 'resources', scorekey = 'energyover', icon = UIUtil.UIFile('/dialogs/score-uef/icon-energy_bmp.dds') },
-            }
-        },
-    }
-
-    local function SafeGetScore(catKey, scorekey, catCol)
-        if not ScoreData or not ScoreData.current then return 0 end
-        if not ScoreData.current[ArmiesTable.focusArmy] then return 0 end
-        local cat = ScoreData.current[ArmiesTable.focusArmy][catKey]
-        if not cat then return 0 end
-        local sk = cat[scorekey]
-        if not sk then return 0 end
-        if catCol and sk[catCol] then
-            return math.floor(tonumber(sk[catCol]) or 0)
-        end
-        if type(sk) == 'number' then
-            return math.floor(sk)
-        end
-        return math.floor(tonumber(sk) or 0)
-    end
-
-    for index, sectionInfo in DataSections do
-        local section = Group(scGUI.panel)
-        section.title = UIUtil.CreateText(section, LOC(sectionInfo.title), 20, "Arial")
-        section.title:SetColor('ffc0c0c0')
-        section.title:SetDropShadow(true)
-        section.data = {}
-
-        for i, sectionInfoInner in sectionInfo.sections do
-            section.data[i] = {}
-            section.data[i].icon = Bitmap(section, sectionInfoInner.icon)
-            section.data[i].icon.Height:Set(22)
-            section.data[i].icon.Width:Set(22)
-            section.data[i].text = UIUtil.CreateText(section, LOC(sectionInfoInner.title), 16, "Arial")
-
-            local value = 0
-            if sectionInfoInner.scoreratio then
-                local k = tonumber(section.data[1].value:GetText()) or 0
-                local l = tonumber(section.data[2].value:GetText()) or 0
-                value = string.format("%2.2f", k / math.max(l, 1))
-            elseif sectionInfoInner.scoretotal then
-                local curIndex = 1
-                local total = 0
-                while curIndex < table.getn(sectionInfo.sections) do
-                    total = total + (tonumber(section.data[curIndex].value:GetText()) or 0)
-                    curIndex = curIndex + 1
-                end
-                value = tostring(total)
-            elseif sectionInfoInner.catKey2 then
-                -- massover/energyover are plain numbers (Economy_AccumExcess_*)
-                value = tostring(SafeGetScore(sectionInfoInner.catKey2, sectionInfoInner.scorekey, nil))
-            else
-                value = tostring(SafeGetScore(sectionInfo.catKey, sectionInfoInner.scorekey, sectionInfo.catCol))
-            end
-            section.data[i].value = UIUtil.CreateText(section, value, 16, "Arial")
-            section.data[i].text:SetColor(sectionInfo.color)
-            section.data[i].value:SetColor(sectionInfo.color)
-        end
-
-        section.Height:Set(1)
-        section.Width:Set(315)
-        LayoutHelpers.AtLeftTopIn(section, scGUI.panel, 0, PositionData.DataSections[index])
-
-        -- Format section layout
-        LayoutHelpers.AtHorizontalCenterIn(section.title, section)
-        LayoutHelpers.AtTopIn(section.title, section)
-        for i, sectionControls in section.data do
-            LayoutHelpers.AtLeftTopIn(sectionControls.icon, section, 25, (i * 26) + 9)
-            LayoutHelpers.AtVerticalCenterIn(sectionControls.text, sectionControls.icon)
-            LayoutHelpers.AtVerticalCenterIn(sectionControls.value, sectionControls.icon)
-            LayoutHelpers.AtLeftIn(sectionControls.text, section, 55)
-            LayoutHelpers.AtRightIn(sectionControls.value, section, 25)
-        end
-
-        scGUI.statSections[index] = section
-    end
-
-    ------------------------------------------------
-    -- Debriefing Area
-    ------------------------------------------------
-    scGUI.DebriefPanel = Bitmap(scGUI.panel, UIUtil.UIFile('/dialogs/score-' .. faction .. '/text-box_bmp.dds'))
-    LayoutHelpers.AtLeftTopIn(scGUI.DebriefPanel, scGUI.panel, 322, 10)
-
-    scGUI.DebriefPanel.title = UIUtil.CreateText(scGUI.DebriefPanel, LOC('<LOC SCORE_0058>Debrief'), 18, "Arial")
-    LayoutHelpers.AtLeftTopIn(scGUI.DebriefPanel.title, scGUI.DebriefPanel, 20, 8)
-    if faction == 'aeon' then
-        LayoutHelpers.AtLeftTopIn(scGUI.DebriefPanel.title, scGUI.DebriefPanel, 22, 10)
-    end
-    scGUI.DebriefPanel.title:SetColor(facFont[faction].color2)
-
-    scGUI.DebriefContainer = Group(scGUI.DebriefPanel)
-    scGUI.DebriefContainer.Height:Set(function() return scGUI.DebriefPanel.Height() - 42 end)
-    scGUI.DebriefContainer.Width:Set(function() return scGUI.DebriefPanel.Width() - 52 end)
-    scGUI.DebriefContainer.top = 0
-    LayoutHelpers.AtLeftTopIn(scGUI.DebriefContainer, scGUI.DebriefPanel, 15, 32)
+    -- Debrief title
+    local debriefTitle = UIUtil.CreateText(debriefGroup, LOC("<LOC SCORE_0058>Debrief"), 16, UIUtil.titleFont)
+    LayoutHelpers.AtLeftTopIn(debriefTitle, debriefGroup, 15, 8)
 
     -- Get debriefing text from SC campaign data
-    local debriefingString = ''
-    local debriefingIsEmail = 0
-    local okDebrief, DebriefingData = pcall(import, '/lua/sc_campaign/campaigndebriefingtext.lua')
-    if okDebrief and DebriefingData and DebriefingData.campaignDebriefingText and DebriefingData.campaignDebriefingText[opId] then
-        local outcomeKey = 'success'
-        local emailKey = 'successHeaderLines'
-        if not victory then
-            outcomeKey = 'failure'
-            emailKey = 'failureHeaderLines'
+    local debriefingText = ''
+    local ok2, debriefData = pcall(import, '/lua/sc_campaign/campaigndebriefingtext.lua')
+    if ok2 and debriefData and debriefData.campaignDebriefingText and debriefData.campaignDebriefingText[opKey] then
+        local opDebrief = debriefData.campaignDebriefingText[opKey]
+        local textKey = 'failure'
+        if victory then
+            textKey = 'success'
         end
-        debriefingIsEmail = DebriefingData.campaignDebriefingText[opId][emailKey] or 0
-        if DebriefingData.campaignDebriefingText[opId][outcomeKey] then
-            debriefingString = LOC(DebriefingData.campaignDebriefingText[opId][outcomeKey])
+        if opDebrief[textKey] then
+            debriefingText = LOC(opDebrief[textKey])
         end
     end
 
-    -- Replace {g PlayerName} placeholder
+    -- Replace {g PlayerName} placeholder with actual player name
     if playerName and playerName ~= '' then
-        debriefingString = string.gsub(debriefingString, '%%{g PlayerName%%}', playerName)
-        debriefingString = string.gsub(debriefingString, '{g PlayerName}', playerName)
+        debriefingText = string.gsub(debriefingText, '%{g PlayerName%}', playerName)
     end
 
-    -- Create debrief display elements
+    -- Determine header lines count
+    local headerLines = 0
+    if ok2 and debriefData and debriefData.campaignDebriefingText and debriefData.campaignDebriefingText[opKey] then
+        local headerKey = 'successHeaderLines'
+        if not victory then
+            headerKey = 'failureHeaderLines'
+        end
+        headerLines = debriefData.campaignDebriefingText[opKey][headerKey] or 0
+    end
+
+    -- Debrief text container with scrollbar
+    local debriefContainer = Group(debriefGroup)
+    debriefContainer.Height:Set(function() return debriefGroup.Height() - 40 end)
+    debriefContainer.Width:Set(function() return debriefGroup.Width() - 30 end)
+    debriefContainer.top = 0
+    LayoutHelpers.AtLeftTopIn(debriefContainer, debriefGroup, 12, 35)
+
+    -- Wrap text for display
+    local wrappedLines = {}
+    if debriefingText and debriefingText ~= '' then
+        -- Split by \n first
+        local linesByNewline = {}
+        local startIndex = 1
+        while true do
+            local nlStart, nlEnd = string.find(debriefingText, '\n', startIndex, true)
+            if nlStart then
+                table.insert(linesByNewline, string.sub(debriefingText, startIndex, nlStart - 1))
+                startIndex = nlEnd + 1
+            else
+                table.insert(linesByNewline, string.sub(debriefingText, startIndex))
+                break
+            end
+        end
+
+        -- Wrap each line to fit container width
+        for _, rawLine in linesByNewline do
+            if rawLine == '' then
+                table.insert(wrappedLines, { text = '', type = 'body' })
+            else
+                local WrappedTextLib = import('/lua/maui/text.lua')
+                local tempText = UIUtil.CreateText(debriefContainer, '', 14, "Arial")
+                local wrapped = WrappedTextLib.WrapText(rawLine, debriefContainer.Width(),
+                    function(text)
+                        return tempText:GetStringAdvance(text)
+                    end)
+                tempText:Destroy()
+                for _, w in wrapped do
+                    table.insert(wrappedLines, { text = w, type = 'body' })
+                end
+            end
+        end
+    end
+
+    -- Mark header lines
+    for i = 1, math.min(headerLines, table.getn(wrappedLines)) do
+        if wrappedLines[i] then
+            wrappedLines[i].type = 'header'
+        end
+    end
+
+    -- Create text display elements
+    local debriefDisplay = {}
+
     local function CreateDebriefElements()
         local function CreateElement(index)
-            scGUI.DebriefDisplay[index] = UIUtil.CreateText(scGUI.DebriefContainer, '', 14, "Arial")
-            scGUI.DebriefDisplay[index]:DisableHitTest()
+            debriefDisplay[index] = UIUtil.CreateText(debriefContainer, '', 14, "Arial")
+            debriefDisplay[index]:DisableHitTest()
         end
 
         CreateElement(1)
-        LayoutHelpers.AtLeftTopIn(scGUI.DebriefDisplay[1], scGUI.DebriefContainer)
+        LayoutHelpers.AtLeftTopIn(debriefDisplay[1], debriefContainer)
 
         local index = 2
-        while scGUI.DebriefDisplay[table.getsize(scGUI.DebriefDisplay)].Top() + scGUI.DebriefDisplay[1].Height() < scGUI.DebriefContainer.Bottom() do
+        while debriefDisplay[table.getsize(debriefDisplay)].Bottom() + debriefDisplay[1].Height() < debriefContainer.Bottom() do
             CreateElement(index)
-            LayoutHelpers.Below(scGUI.DebriefDisplay[index], scGUI.DebriefDisplay[index - 1])
+            LayoutHelpers.Below(debriefDisplay[index], debriefDisplay[index - 1])
             index = index + 1
         end
     end
     CreateDebriefElements()
 
-    -- Wrap debrief text
-    local textBoxWidth = scGUI.DebriefContainer.Right() - scGUI.DebriefContainer.Left()
-    local tempWrappedDebriefText = import('/lua/maui/text.lua').WrapText(debriefingString, textBoxWidth,
-        function(text)
-            return scGUI.DebriefDisplay[1]:GetStringAdvance(text)
-        end)
-
-    local wrappedDebriefText = {}
-    local successString = '<LOC SCORE_0055>Operation Successful'
-    if not victory then
-        successString = '<LOC SCORE_0056>Operation Failed'
-    end
-    wrappedDebriefText[1] = { text = LOC(successString), type = 'subject' }
-
-    local debriefIndex = 2
-    for i, v in tempWrappedDebriefText do
-        wrappedDebriefText[debriefIndex] = {}
-        wrappedDebriefText[debriefIndex].text = v
-        if debriefingIsEmail and i <= debriefingIsEmail then
-            wrappedDebriefText[debriefIndex].type = 'header'
-        else
-            wrappedDebriefText[debriefIndex].type = 'body'
-        end
-        debriefIndex = debriefIndex + 1
+    local numLines = function() return table.getsize(debriefDisplay) end
+    local function DataSize()
+        return table.getn(wrappedLines)
     end
 
-    if table.getn(wrappedDebriefText) > table.getsize(scGUI.DebriefDisplay) then
-        UIUtil.CreateVertScrollbarFor(scGUI.DebriefContainer, nil, '/small-vert_scroll-' .. faction .. '/')
+    debriefContainer.GetScrollValues = function(self, axis)
+        local size = DataSize()
+        return 0, size, self.top, math.min(self.top + numLines(), size)
     end
-
-    local numDebriefLines = function() return table.getsize(scGUI.DebriefDisplay) end
-
-    local function DebriefDataSize()
-        return table.getn(wrappedDebriefText)
-    end
-
-    scGUI.DebriefContainer.GetScrollValues = function(self, axis)
-        local size = DebriefDataSize()
-        return 0, size, self.top, math.min(self.top + numDebriefLines(), size)
-    end
-    scGUI.DebriefContainer.ScrollLines = function(self, axis, delta)
+    debriefContainer.ScrollLines = function(self, axis, delta)
         self:ScrollSetTop(axis, self.top + math.floor(delta))
     end
-    scGUI.DebriefContainer.ScrollPages = function(self, axis, delta)
-        self:ScrollSetTop(axis, self.top + math.floor(delta) * numDebriefLines())
+    debriefContainer.ScrollPages = function(self, axis, delta)
+        self:ScrollSetTop(axis, self.top + math.floor(delta) * numLines())
     end
-    scGUI.DebriefContainer.ScrollSetTop = function(self, axis, top)
+    debriefContainer.ScrollSetTop = function(self, axis, top)
         top = math.floor(top)
         if top == self.top then return end
-        local size = DebriefDataSize()
-        self.top = math.max(math.min(size - numDebriefLines(), top), 0)
+        local size = DataSize()
+        self.top = math.max(math.min(size - numLines(), top), 0)
         self:CalcVisible()
     end
-    scGUI.DebriefContainer.IsScrollable = function(self, axis)
+    debriefContainer.IsScrollable = function(self, axis)
         return true
     end
-    scGUI.DebriefContainer.CalcVisible = function(self)
-        local function SetTextLine(line, data)
-            if data.type == 'header' then
-                line:SetText(data.text)
-                line:SetFont("Arial Bold", 14)
-                line:SetColor(facFont[faction].color3)
-            elseif data.type == 'subject' then
-                line:SetText(data.text)
-                line:SetFont(UIUtil.titleFont, 16)
-                line:SetColor(facFont[faction].color3)
-            else
-                line:SetText(data.text)
-                line:SetFont("Arial", 14)
-                line:SetColor(facFont[faction].color)
-            end
-        end
-        for i, v in scGUI.DebriefDisplay do
-            if wrappedDebriefText[i + self.top] then
-                SetTextLine(v, wrappedDebriefText[i + self.top])
+    debriefContainer.CalcVisible = function(self)
+        for i, v in debriefDisplay do
+            local lineData = wrappedLines[i + self.top]
+            if lineData then
+                v:SetText(lineData.text)
+                if lineData.type == 'header' then
+                    v:SetFont("Arial Bold", 14)
+                    v:SetColor('ffe59f00')
+                else
+                    v:SetFont("Arial", 14)
+                    v:SetColor(UIUtil.fontColor)
+                end
             else
                 v:SetText('')
             end
         end
     end
-    scGUI.DebriefContainer.HandleEvent = function(control, event)
+    debriefContainer.HandleEvent = function(control, event)
         if event.Type == 'WheelRotation' then
             local lines = 1
-            if event.WheelRotation > 0 then lines = -1 end
+            if event.WheelRotation > 0 then
+                lines = -1
+            end
             control:ScrollLines(nil, lines)
         end
     end
 
-    scGUI.DebriefContainer:CalcVisible()
+    UIUtil.CreateVertScrollbarFor(debriefContainer)
+    debriefContainer:CalcVisible()
 
-    ------------------------------------------------
-    -- Objective Area
-    ------------------------------------------------
-    local ObjectiveLogData = FormatObjectiveInfo()
+    -------------------------------------------------
+    -- Right side: Objective list
+    -------------------------------------------------
+    local objGroup = CreateBorderGroupSafe(bg)
+    LayoutHelpers.AtLeftTopIn(objGroup, bg, 500, 90)
+    objGroup.Height:Set(250)
+    objGroup.Width:Set(430)
 
-    scGUI.ObjPanel = Bitmap(scGUI.panel, UIUtil.UIFile('/dialogs/score-' .. faction .. '/text-box_bmp.dds'))
-    LayoutHelpers.Below(scGUI.ObjPanel, scGUI.DebriefPanel)
+    local objTitle = UIUtil.CreateText(objGroup, LOC("<LOC tooltipui0058>Objectives"), 16, UIUtil.titleFont)
+    LayoutHelpers.AtLeftTopIn(objTitle, objGroup, 15, 8)
 
-    scGUI.ObjPanel.title = UIUtil.CreateText(scGUI.ObjPanel, LOC('<LOC tooltipui0058>Objectives'), 18, "Arial")
-    LayoutHelpers.AtLeftTopIn(scGUI.ObjPanel.title, scGUI.ObjPanel, 20, 8)
-    if faction == 'aeon' then
-        LayoutHelpers.AtLeftTopIn(scGUI.ObjPanel.title, scGUI.ObjPanel, 22, 10)
-    end
-    scGUI.ObjPanel.title:SetColor(facFont[faction].color2)
+    -- Gather objectives from FA's objective system
+    local sortedObjectives = {}
+    local tempObjectives = {}
+    local hasPrimaries = false
+    local hasSecondaries = false
 
-    scGUI.ObjContainer = Group(scGUI.ObjPanel)
-    scGUI.ObjContainer.Height:Set(function() return scGUI.ObjPanel.Height() - 40 end)
-    scGUI.ObjContainer.Width:Set(function() return scGUI.ObjPanel.Width() - 52 end)
-    if faction == 'aeon' then
-        scGUI.ObjContainer.Width:Set(function() return scGUI.ObjPanel.Width() - 54 end)
-    end
-    scGUI.ObjContainer.top = 0
-    LayoutHelpers.AtLeftTopIn(scGUI.ObjContainer, scGUI.ObjPanel, 15, 30)
-    UIUtil.CreateVertScrollbarFor(scGUI.ObjContainer, nil, '/small-vert_scroll-' .. faction .. '/')
-
-    -- Objective log button bar textures
-    local function GetBGTextures(bgtype)
-        if bgtype == 'title' then
-            return UIUtil.UIFile('/dialogs/objective-log-btn-bar/tab_bmp.dds'),
-                   UIUtil.UIFile('/dialogs/objective-log-btn-bar/tab_bmp.dds'),
-                   UIUtil.UIFile('/dialogs/objective-log-btn-bar/tab_bmp.dds'),
-                   UIUtil.UIFile('/dialogs/objective-log-btn-bar/tab_bmp.dds'),
-                   UIUtil.UIFile('/dialogs/objective-log-btn-bar/tab_bmp.dds'),
-                   UIUtil.UIFile('/dialogs/objective-log-btn-bar/tab_bmp.dds')
-        elseif bgtype == 'bottom' then
-            return UIUtil.UIFile('/dialogs/objective-log-btn-bar/bar-bottom_btn_up.dds'),
-                   UIUtil.UIFile('/dialogs/objective-log-btn-bar/bar-bottom_btn_select.dds'),
-                   UIUtil.UIFile('/dialogs/objective-log-btn-bar/bar-bottom_btn_over.dds'),
-                   UIUtil.UIFile('/dialogs/objective-log-btn-bar/bar-bottom_btn_select.dds'),
-                   UIUtil.UIFile('/dialogs/objective-log-btn-bar/bar-bottom_btn_up.dds'),
-                   UIUtil.UIFile('/dialogs/objective-log-btn-bar/bar-bottom_btn_up.dds')
-        else
-            return UIUtil.UIFile('/dialogs/objective-log-btn-bar/bar_btn_up.dds'),
-                   UIUtil.UIFile('/dialogs/objective-log-btn-bar/bar_btn_select.dds'),
-                   UIUtil.UIFile('/dialogs/objective-log-btn-bar/bar_btn_over.dds'),
-                   UIUtil.UIFile('/dialogs/objective-log-btn-bar/bar_btn_select.dds'),
-                   UIUtil.UIFile('/dialogs/objective-log-btn-bar/bar_btn_up.dds'),
-                   UIUtil.UIFile('/dialogs/objective-log-btn-bar/bar_btn_up.dds')
+    local ok3, obTable = pcall(function()
+        return import('/lua/ui/game/objectives2.lua').GetCurrentObjectiveTable()
+    end)
+    if ok3 and obTable then
+        for key, objective in obTable do
+            local compStr
+            local compColor = 'ffff0000'
+            if objective.complete == 'complete' then
+                compStr = "<LOC SCORE_0038>Accomplished"
+                compColor = 'ff00ff00'
+            elseif objective.complete == 'failed' then
+                compStr = "<LOC SCORE_0039>Failed"
+                compColor = 'ffff0000'
+            else
+                compStr = "<LOC SCORE_0054>Incomplete"
+                compColor = 'ff0000ff'
+            end
+            if objective.type == 'primary' then
+                hasPrimaries = true
+            elseif objective.type == 'secondary' then
+                hasSecondaries = true
+            end
+            table.insert(tempObjectives, {
+                title = LOC(objective.title) or key,
+                complete = LOC(compStr) or compStr,
+                completeColor = compColor,
+                type = objective.type or 'primary'
+            })
         end
     end
 
-    -- Create objective entries
-    local function CreateObjectiveElements()
+    if hasPrimaries then
+        table.insert(sortedObjectives, { title = LOC("<LOC SCORE_0037>Primary Objectives"), type = 'header' })
+        for _, v in tempObjectives do
+            if v.type == 'primary' then
+                table.insert(sortedObjectives, v)
+            end
+        end
+    end
+
+    if hasSecondaries then
+        table.insert(sortedObjectives, { title = LOC("<LOC SCORE_0040>Secondary Objectives"), type = 'header' })
+        for _, v in tempObjectives do
+            if v.type == 'secondary' then
+                table.insert(sortedObjectives, v)
+            end
+        end
+    end
+
+    -- If no objectives were found, show a placeholder
+    if table.getn(sortedObjectives) == 0 then
+        table.insert(sortedObjectives, { title = LOC("<LOC SCORE_0054>Incomplete"), type = 'header' })
+    end
+
+    -- Objective container with scrollbar
+    local objContainer = Group(objGroup)
+    objContainer.Height:Set(function() return objGroup.Height() - 40 end)
+    objContainer.Width:Set(function() return objGroup.Width() - 30 end)
+    objContainer.top = 0
+    LayoutHelpers.AtLeftTopIn(objContainer, objGroup, 12, 35)
+
+    local objEntries = {}
+
+    local function CreateObjElements()
         local function CreateElement(index)
-            scGUI.ObjEntries[index] = {}
-            scGUI.ObjEntries[index].bg = Checkbox(scGUI.ObjContainer, GetBGTextures('title'))
-            scGUI.ObjEntries[index].bg.Left:Set(scGUI.ObjContainer.Left)
-            scGUI.ObjEntries[index].bg.Right:Set(scGUI.ObjContainer.Right)
-            scGUI.ObjEntries[index].bg.Height:Set(64)
+            objEntries[index] = {}
+            objEntries[index].bg = Bitmap(objContainer)
+            objEntries[index].bg.Left:Set(objContainer.Left)
+            objEntries[index].bg.Right:Set(objContainer.Right)
 
-            scGUI.ObjEntries[index].icon = Button(scGUI.ObjEntries[index].bg)
-            scGUI.ObjEntries[index].icon:SetSolidColor('00000000')
-            scGUI.ObjEntries[index].icon:DisableHitTest()
-            scGUI.ObjEntries[index].icon.Height:Set(48)
-            scGUI.ObjEntries[index].icon.Width:Set(48)
+            objEntries[index].title = UIUtil.CreateText(objEntries[1].bg, '', 16, UIUtil.bodyFont)
+            objEntries[index].title:DisableHitTest()
 
-            scGUI.ObjEntries[index].title = UIUtil.CreateText(scGUI.ObjEntries[index].bg, '', 14, "Arial")
-            scGUI.ObjEntries[index].title:DisableHitTest()
+            objEntries[index].result = UIUtil.CreateText(objEntries[1].bg, '', 16, UIUtil.bodyFont)
+            objEntries[index].result:DisableHitTest()
 
-            scGUI.ObjEntries[index].time = UIUtil.CreateText(scGUI.ObjEntries[index].bg, '', 12, "Arial")
-            scGUI.ObjEntries[index].time:DisableHitTest()
+            objEntries[index].bg.Height:Set(function() return objEntries[index].title.Height() + 4 end)
 
-            scGUI.ObjEntries[index].status = UIUtil.CreateText(scGUI.ObjEntries[index].bg, '', 12, "Arial")
-            scGUI.ObjEntries[index].status:DisableHitTest()
-
-            LayoutHelpers.AtLeftIn(scGUI.ObjEntries[index].icon, scGUI.ObjEntries[index].bg, 25)
-            LayoutHelpers.AtVerticalCenterIn(scGUI.ObjEntries[index].icon, scGUI.ObjEntries[index].bg)
-            scGUI.ObjEntries[index].title.Top:Set(function() return scGUI.ObjEntries[index].icon.Top() + 0 end)
-            scGUI.ObjEntries[index].title.Left:Set(function() return scGUI.ObjEntries[index].icon.Right() + 5 end)
-            LayoutHelpers.Below(scGUI.ObjEntries[index].time, scGUI.ObjEntries[index].title)
-            LayoutHelpers.Below(scGUI.ObjEntries[index].status, scGUI.ObjEntries[index].time)
+            LayoutHelpers.AtVerticalCenterIn(objEntries[index].title, objEntries[index].bg)
+            LayoutHelpers.AtVerticalCenterIn(objEntries[index].result, objEntries[index].bg)
+            LayoutHelpers.AtLeftIn(objEntries[index].title, objEntries[index].bg, 5)
+            LayoutHelpers.AtRightIn(objEntries[index].result, objEntries[index].bg, 5)
         end
 
         CreateElement(1)
-        LayoutHelpers.AtTopIn(scGUI.ObjEntries[1].bg, scGUI.ObjContainer)
+        LayoutHelpers.AtTopIn(objEntries[1].bg, objContainer)
 
         local index = 2
-        while scGUI.ObjEntries[table.getsize(scGUI.ObjEntries)].bg.Top() + (2 * scGUI.ObjEntries[1].bg.Height()) < scGUI.ObjContainer.Bottom() do
+        while objEntries[table.getsize(objEntries)].bg.Top() + (2 * objEntries[1].bg.Height()) < objContainer.Bottom() do
             CreateElement(index)
-            LayoutHelpers.Below(scGUI.ObjEntries[index].bg, scGUI.ObjEntries[index - 1].bg, -4)
+            LayoutHelpers.Below(objEntries[index].bg, objEntries[index - 1].bg)
             index = index + 1
         end
     end
-    CreateObjectiveElements()
+    CreateObjElements()
 
-    local numObjLines = function() return table.getsize(scGUI.ObjEntries) end
-
+    local numObjLines = function() return table.getsize(objEntries) end
     local function ObjDataSize()
-        return table.getn(ObjectiveLogData)
+        return table.getn(sortedObjectives)
     end
 
-    scGUI.ObjContainer.GetScrollValues = function(self, axis)
+    objContainer.GetScrollValues = function(self, axis)
         local size = ObjDataSize()
         return 0, size, self.top, math.min(self.top + numObjLines(), size)
     end
-    scGUI.ObjContainer.ScrollLines = function(self, axis, delta)
+    objContainer.ScrollLines = function(self, axis, delta)
         self:ScrollSetTop(axis, self.top + math.floor(delta))
     end
-    scGUI.ObjContainer.ScrollPages = function(self, axis, delta)
+    objContainer.ScrollPages = function(self, axis, delta)
         self:ScrollSetTop(axis, self.top + math.floor(delta) * numObjLines())
     end
-    scGUI.ObjContainer.ScrollSetTop = function(self, axis, top)
+    objContainer.ScrollSetTop = function(self, axis, top)
         top = math.floor(top)
         if top == self.top then return end
         local size = ObjDataSize()
         self.top = math.max(math.min(size - numObjLines(), top), 0)
         self:CalcVisible()
     end
-    scGUI.ObjContainer.IsScrollable = function(self, axis)
+    objContainer.IsScrollable = function(self, axis)
         return true
     end
-    scGUI.ObjContainer.CalcVisible = function(self)
-        local function SetTextLine(line, data, lineID)
-            line.bg:Show()
-            line.bg:SetCheck(false, true)
-            if data.type == 'title' then
-                line.bg:Disable()
-                line.bg:SetNewTextures(GetBGTextures(data.type))
-                line.icon:Hide()
-                line.title:SetText(LOC(data.title))
-                line.title:SetColor(data.color)
-                line.title:SetFont("Arial Bold", 18)
-                line.time:SetText('')
-                line.status:SetText('')
-                LayoutHelpers.AtVerticalCenterIn(line.title, line.icon, 8)
-                line.title.Left:Set(function() return line.bg.Left() + 12 end)
-            else
-                local bgtype = 'middle'
-                if (ObjectiveLogData[lineID + 1] and ObjectiveLogData[lineID + 1].type == 'title') or not ObjectiveLogData[lineID + 1] then
-                    bgtype = 'bottom'
-                end
-                line.bg:SetNewTextures(GetBGTextures(bgtype))
-                line.bg:Enable()
-                if data.HideIcon then
-                    line.icon:Hide()
-                    line.title.Left:Set(function() return line.bg.Left() + 25 end)
+    objContainer.CalcVisible = function(self)
+        for i, v in objEntries do
+            local data = sortedObjectives[i + self.top]
+            if data then
+                if data.type == 'header' then
+                    LayoutHelpers.AtHorizontalCenterIn(v.title, objContainer)
+                    v.bg:SetSolidColor('ff506268')
+                    v.title:SetText(data.title)
+                    v.title:SetFont(UIUtil.titleFont, 16)
+                    v.title:SetColor(UIUtil.fontColor)
+                    v.result:SetText('')
                 else
-                    line.title.Left:Set(function() return line.icon.Right() + 5 end)
-                    line.icon:Show()
+                    LayoutHelpers.AtLeftIn(v.title, v.bg, 5)
+                    v.bg:SetSolidColor('00000000')
+                    v.title:SetText(data.title)
+                    v.title:SetColor('ffffffff')
+                    v.title:SetFont(UIUtil.bodyFont, 14)
+                    v.result:SetText(data.complete or '')
+                    v.result:SetColor(data.completeColor)
                 end
-                line.title:SetColor('ffffffff')
-                line.title:SetText(LOC(data.title))
-                line.title:SetFont("Arial", 14)
-                line.title.Top:Set(function() return line.icon.Top() + 0 end)
-
-                -- Status text
-                local status = ''
-                if data.Status == 'complete' then
-                    status = "<LOC objui_0003>Complete"
-                elseif data.Status == 'failed' then
-                    status = "<LOC objui_0004>Failed"
-                else
-                    status = '<LOC objui_0005>Incomplete'
-                end
-                line.status:SetText(LOC(status))
-                line.time:SetText('')
-            end
-        end
-        for i, v in scGUI.ObjEntries do
-            if ObjectiveLogData[i + self.top] then
-                SetTextLine(v, ObjectiveLogData[i + self.top], i + self.top)
             else
-                v.bg:Hide()
+                v.bg:SetSolidColor('00000000')
                 v.title:SetText('')
-                v.time:SetText('')
-                v.status:SetText('')
-                v.icon:Hide()
-                v.bg:Disable()
+                v.result:SetText('')
             end
         end
     end
-    scGUI.ObjContainer.HandleEvent = function(control, event)
+    objContainer.HandleEvent = function(control, event)
         if event.Type == 'WheelRotation' then
             local lines = 1
-            if event.WheelRotation > 0 then lines = -1 end
+            if event.WheelRotation > 0 then
+                lines = -1
+            end
             control:ScrollLines(nil, lines)
         end
     end
+    objContainer:CalcVisible()
 
-    scGUI.ObjContainer:CalcVisible()
-
-    ------------------------------------------------
-    -- Medals Area
-    ------------------------------------------------
-    local okMedal, medals = pcall(function()
+    -------------------------------------------------
+    -- Bottom right: Medals area (if textures exist)
+    -------------------------------------------------
+    local medalBitmaps = nil
+    local ok4, medals = pcall(function()
         return import('/lua/sc_campaign/campaignmanager.lua').GetMedalBitmaps(
-            opId,
+            opKey,
             operationVictoryTable.difficulty,
             operationVictoryTable.allPrimary,
             operationVictoryTable.allSecondary,
@@ -880,49 +518,136 @@ local function CreateSCCampaignScoreScreen(victory, operationVictoryTable)
         )
     end)
 
-    if okMedal and medals then
-        -- SC-original medal style: single localized title + stacked medals
-        -- (mission = bottom layer, difficulty = middle layer, award = top layer).
-        -- 'p' award type (primary-only) has no texture file; only pb/ps/psb exist.
-        -- Medal textures are 116x40px; scale down to ~half for higher resolutions.
-        local medalW = 58
-        local medalH = 20
+    if ok4 and medals then
+        -- Check if all medal textures exist
+        local allExist = true
+        for k, v in medals do
+            if not TextureExists(v) then
+                allExist = false
+                break
+            end
+        end
 
-        local medalGroup = Group(scGUI.panel)
-        medalGroup.Width:Set(medalW + 30)
-        LayoutHelpers.Below(medalGroup, scGUI.ObjPanel, 10)
+        if allExist then
+            local medalGroup = CreateBorderGroupSafe(bg)
+            LayoutHelpers.AtLeftTopIn(medalGroup, bg, 500, 355)
+            medalGroup.Height:Set(125)
+            medalGroup.Width:Set(430)
 
-        local medalLabel = UIUtil.CreateText(medalGroup, LOC('<LOC SCORE_0057>Operation Medal'), 14, "Arial")
-        medalLabel:SetColor(facFont[faction].color2)
-        LayoutHelpers.AtLeftTopIn(medalLabel, medalGroup, 0, 0)
+            local medalTitle = UIUtil.CreateText(medalGroup, LOC("<LOC SCORE_0042>Medals"), 14, UIUtil.bodyFont)
+            LayoutHelpers.AtLeftTopIn(medalTitle, medalGroup, 15, 8)
 
-        -- mission (bottom), difficulty (middle), award (top), stacked via AtCenterIn.
-        local medalBottom = Bitmap(medalGroup)
-        medalBottom:SetTexture(medals.mission)
-        medalBottom.Width:Set(medalW)
-        medalBottom.Height:Set(medalH)
-        LayoutHelpers.CenteredBelow(medalBottom, medalLabel)
+            -- Display medals horizontally
+            local medalIcons = {}
+            local medalLabels = { difficulty = 'Difficulty', mission = 'Mission', award = 'Award' }
+            local medalIndex = 1
+            for key, texPath in medals do
+                medalIcons[medalIndex] = Bitmap(medalGroup, texPath)
+                medalIcons[medalIndex].Height:Set(48)
+                medalIcons[medalIndex].Width:Set(48)
+                if medalIndex == 1 then
+                    LayoutHelpers.AtLeftTopIn(medalIcons[medalIndex], medalGroup, 30, 35)
+                else
+                    LayoutHelpers.RightOf(medalIcons[medalIndex], medalIcons[medalIndex - 1], 50)
+                end
 
-        local medalMiddle = Bitmap(medalGroup)
-        medalMiddle:SetTexture(medals.difficulty)
-        medalMiddle.Width:Set(medalW)
-        medalMiddle.Height:Set(medalH)
-        LayoutHelpers.AtCenterIn(medalMiddle, medalBottom)
-
-        local medalTop = Bitmap(medalGroup)
-        medalTop:SetTexture(medals.award)
-        medalTop.Width:Set(medalW)
-        medalTop.Height:Set(medalH)
-        LayoutHelpers.AtCenterIn(medalTop, medalMiddle)
-
-        medalGroup.Height:Set(medalLabel.Height() + medalH + 10)
+                local medalLabel = UIUtil.CreateText(medalGroup, LOC(medalLabels[key] or key), 12, UIUtil.bodyFont)
+                LayoutHelpers.AtHorizontalCenterIn(medalLabel, medalIcons[medalIndex])
+                LayoutHelpers.Below(medalLabel, medalIcons[medalIndex], 2)
+                medalIndex = medalIndex + 1
+            end
+        end
     end
+
+    -------------------------------------------------
+    -- Buttons
+    -------------------------------------------------
+    -- Continue button
+    bg.continueBtn = UIUtil.CreateButtonStd(bg, '/scx_menu/large-no-bracket-btn/large', "<LOC _Continue>", 22, 2, 0, "UI_Menu_MouseDown", "UI_Opt_Affirm_Over")
+    LayoutHelpers.AtRightIn(bg.continueBtn, bg, -10)
+    LayoutHelpers.AtBottomIn(bg.continueBtn, bg, 20)
+    bg.continueBtn:UseAlphaHitTest(false)
+
+    bg.continueBtn.glow = Bitmap(bg.continueBtn, UIUtil.UIFile('/scx_menu/large-no-bracket-btn/large_btn_glow.dds'))
+    LayoutHelpers.AtCenterIn(bg.continueBtn.glow, bg.continueBtn)
+    bg.continueBtn.glow:SetAlpha(0)
+    bg.continueBtn.glow:DisableHitTest()
+
+    bg.continueBtn.pulse = Bitmap(bg.continueBtn, UIUtil.UIFile('/scx_menu/large-no-bracket-btn/large_btn_glow.dds'))
+    LayoutHelpers.AtCenterIn(bg.continueBtn.pulse, bg.continueBtn)
+    bg.continueBtn.pulse:DisableHitTest()
+    bg.continueBtn.pulse:SetAlpha(.5)
+    EffectHelpers.Pulse(bg.continueBtn.pulse, 2, .5, 1)
+
+    bg.continueBtn.OnRolloverEvent = function(self, event)
+        if event == 'enter' then
+            EffectHelpers.FadeIn(self.glow, .25, 0, 1)
+            self.label:SetColor('black')
+        elseif event == 'down' then
+            self.label:SetColor('black')
+        else
+            EffectHelpers.FadeOut(self.glow, .25, 1, 0)
+            self.label:SetColor('FFbadbdb')
+        end
+    end
+
+    bg.continueBtn.OnClick = function(self, modifiers)
+        ConExecute("ren_Oblivion false")
+        if victory then
+            -- Record the operation as complete and exit
+            import('/lua/sc_campaign/campaignmanager.lua').SetAutoContinueOpStatus(true, opKey, operationVictoryTable.difficulty)
+            ExitGame()
+        else
+            -- On failure, just exit
+            ExitGame()
+        end
+    end
+    Tooltip.AddButtonTooltip(bg.continueBtn, 'PostScore_Quit')
+
+    -- Restart button (only on failure)
+    if not victory then
+        bg.continueBtn.label:SetText(LOC('<LOC _Skip>Skip'))
+        bg.continueBtn.HandleEvent = bg.continueBtn.oldHandleEvent
+        Tooltip.AddButtonTooltip(bg.continueBtn, 'CampaignScore_Skip')
+
+        bg.restartBtn = UIUtil.CreateButtonStd(bg, '/scx_menu/large-no-bracket-btn/large', "<LOC _Restart>Restart", 22, 2, 0, "UI_Menu_MouseDown", "UI_Opt_Affirm_Over")
+        LayoutHelpers.LeftOf(bg.restartBtn, bg.continueBtn, -40)
+        bg.continueBtn:UseAlphaHitTest(false)
+
+        bg.restartBtn.glow = Bitmap(bg.restartBtn, UIUtil.UIFile('/scx_menu/large-no-bracket-btn/large_btn_glow.dds'))
+        LayoutHelpers.AtCenterIn(bg.restartBtn.glow, bg.restartBtn)
+        bg.restartBtn.glow:SetAlpha(0)
+        bg.restartBtn.glow:DisableHitTest()
+
+        bg.restartBtn.pulse = Bitmap(bg.restartBtn, UIUtil.UIFile('/scx_menu/large-no-bracket-btn/large_btn_glow.dds'))
+        LayoutHelpers.AtCenterIn(bg.restartBtn.pulse, bg.restartBtn)
+        bg.restartBtn.pulse:DisableHitTest()
+        bg.restartBtn.pulse:SetAlpha(.5)
+        EffectHelpers.Pulse(bg.restartBtn.pulse, 2, .5, 1)
+
+        bg.restartBtn.OnRolloverEvent = function(self, event)
+            if event == 'enter' then
+                EffectHelpers.FadeIn(self.glow, .25, 0, 1)
+                self.label:SetColor('black')
+            elseif event == 'down' then
+                self.label:SetColor('black')
+            else
+                EffectHelpers.FadeOut(self.glow, .25, 1, 0)
+                self.label:SetColor('FFbadbdb')
+            end
+        end
+
+        bg.restartBtn.OnClick = function(self, modifiers)
+            ConExecute("ren_Oblivion false")
+            RestartSession()
+        end
+        Tooltip.AddButtonTooltip(bg.restartBtn, 'CampaignScore_Restart')
+    end
+
+    UIUtil.MakeInputModal(scDialog, function() bg.continueBtn:OnClick() end, function() bg.continueBtn:OnClick() end)
 end
 
---*****************************************************************************
--- Override CreateDialog: route SC campaign ops to custom SC-style screen,
--- FA ops to original.
---*****************************************************************************
+-- Override CreateDialog: route SC campaign ops to custom screen, FA ops to original
 function CreateDialog(victory, showCampaign, operationVictoryTable, midGame)
     if midGame then
         ExitGame()
@@ -932,22 +657,7 @@ function CreateDialog(victory, showCampaign, operationVictoryTable, midGame)
     -- Route to SC-style score screen for SCCA_ ops
     if showCampaign and operationVictoryTable and operationVictoryTable.opKey
        and string.sub(operationVictoryTable.opKey, 1, 5) == 'SCCA_' then
-        -- Immediate setup (mirrors FA's CreateDialog)
-        scoreScreenActive = true
-        SessionEndGame()
-        DisableWorldSounds()
-        StopAllSounds()
-        -- Wait for score data to sync via Sync.Score -> scoreaccum.scoreData
-        ForkThread(function()
-            local tries = 0
-            local ScoreData = import('/lua/ui/game/scoreaccum.lua').scoreData
-            while not (ScoreData and ScoreData.current and ScoreData.current[GetArmiesTable().focusArmy]) do
-                if tries > 20 then break end -- 10s cap, render anyway
-                tries = tries + 1
-                WaitSeconds(0.5)
-            end
-            CreateSCCampaignScoreScreen(victory, operationVictoryTable)
-        end)
+        CreateSCCampaignScoreScreen(victory, operationVictoryTable)
     else
         -- FA original behavior
         baseFACreateDialog(victory, showCampaign, operationVictoryTable, midGame)
