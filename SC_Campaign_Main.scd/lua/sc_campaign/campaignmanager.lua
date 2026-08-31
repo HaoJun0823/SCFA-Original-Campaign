@@ -244,6 +244,16 @@ end
 --  bool allBonus - true if all bonus objectives completed, otherwise, false
 --  int factionVideo - Opt.  If present, display this factions end game video
 function OperationVictory(ovTable, skipDialog)
+    LOG('=== SC campaignmanager.OperationVictory DEBUG ===')
+    LOG('  ovTable.opKey=' .. tostring(ovTable.opKey))
+    LOG('  ovTable.success=' .. tostring(ovTable.success))
+    LOG('  ovTable.difficulty=' .. tostring(ovTable.difficulty))
+    LOG('  ovTable.allPrimary=' .. tostring(ovTable.allPrimary))
+    LOG('  ovTable.allSecondary=' .. tostring(ovTable.allSecondary))
+    LOG('  ovTable.allBonus=' .. tostring(ovTable.allBonus))
+    LOG('  ovTable.factionVideo=' .. tostring(ovTable.factionVideo))
+    LOG('  ovTable.campaignID=' .. tostring(ovTable.campaignID))
+    LOG('  skipDialog=' .. tostring(skipDialog))
     StopAllSounds()
     DisableWorldSounds()
     
@@ -258,6 +268,7 @@ function OperationVictory(ovTable, skipDialog)
         local cmpt = GetCampaignTable()
         
         local camp = operationToCampaignMap[ovTable.opKey]
+        LOG('  operationToCampaignMap[' .. ovTable.opKey .. '] = ' .. tostring(camp))
         if camp then
             if not cmpt[camp] then
                 cmpt[camp] = {}
@@ -275,30 +286,48 @@ function OperationVictory(ovTable, skipDialog)
             cmpt[camp][ovTable.opKey][ovTable.difficulty].allBonus = ovTable.allBonus
 
             SetCampaignTable(cmpt)
+            LOG('  Campaign progress saved')
         else
             WARN("OperationVictory: Operation ID not found - " .. ovTable.opKey)
         end
     end
     
+    -- Set NextOpBriefing to a placeholder so that when the engine calls
+    -- StartFrontEndUI() after SessionEndGame(), uimain.lua routes to
+    -- LaunchBriefing (which we hook to do nothing for SC_HOLD) instead of
+    -- main.lua.CreateUI() which would cover our score screen with main_menu.sfd
+    local camp = operationToCampaignMap[ovTable.opKey]
+    if camp then
+        SetFrontEndData('NextOpBriefing', {opID = 'SC_HOLD', campaignID = camp, difficulty = ovTable.difficulty})
+        LOG('  SetFrontEndData NextOpBriefing = SC_HOLD (camp=' .. camp .. ')')
+    end
+
     if not skipDialog then
+        LOG('  skipDialog=false: showing InfoDialog')
         import('/lua/ui/game/worldview.lua').UnlockInput()
         pcall(function()
             import('/lua/ui/game/score.lua').SignalGameOver()
         end)
         if not ovTable.factionVideo then
+            LOG('  No factionVideo: calling ShowInfoDialog')
             UIUtil.ShowInfoDialog(
                 GetFrame(0),
                 resultText,
                 "<LOC _Ok>",
                 function() 
+                    LOG('=== InfoDialog OK callback: calling score.lua.CreateDialog ===')
                     import('/lua/ui/dialogs/score.lua').CreateDialog(ovTable.success, true, ovTable) 
                 end,
                 true)
         else
+            LOG('  factionVideo=' .. tostring(ovTable.factionVideo) .. ': calling PlayEndGameMovie')
             import('/lua/ui/game/missiontext.lua').PlayEndGameMovie(ovTable.factionVideo, function()
+                LOG('=== PlayEndGameMovie callback: calling score.lua.CreateDialog ===')
                 import('/lua/ui/dialogs/score.lua').CreateDialog(ovTable.success, true, ovTable) 
             end)
         end
+    else
+        LOG('  skipDialog=true: no dialog shown')
     end
 end
 
@@ -331,11 +360,23 @@ function GetMedalBitmaps(operationID, difficulty, allPrimary, allSecondary, allB
     	end
     end
     
-    return {
-        difficulty = UIUtil.UIFile(prefix .. facName .. difficultyName .. postfix),
-        mission = UIUtil.UIFile(prefix .. operationID .. postfix),
-        award = UIUtil.UIFile(prefix .. facName .. awardType .. postfix),
-    }
+    local result = {}
+    local difficultyPath = UIUtil.UIFile(prefix .. facName .. difficultyName .. postfix)
+    local missionPath = UIUtil.UIFile(prefix .. operationID .. postfix)
+    if DiskGetFileInfo(difficultyPath) then
+        result.difficulty = difficultyPath
+    end
+    if DiskGetFileInfo(missionPath) then
+        result.mission = missionPath
+    end
+    -- Only include award medal if its texture exists (medal-*-p_bmp.dds may not exist)
+    if awardType ~= 'p' then
+        local awardPath = UIUtil.UIFile(prefix .. facName .. awardType .. postfix)
+        if DiskGetFileInfo(awardPath) then
+            result.award = awardPath
+        end
+    end
+    return result
 end
 
 -- Given the appropriate parameters, returns the table of bitmaps to display for a medal

@@ -22,10 +22,13 @@ local function SCCaToFaction(opKey)
 end
 
 function EndOperation(a, b, c, d, e, f, g)
+    LOG('=== ScenarioFramework.EndOperation DEBUG ===')
+    LOG('  a=' .. tostring(a) .. ' b=' .. tostring(b) .. ' c=' .. tostring(c) .. ' d=' .. tostring(d) .. ' e=' .. tostring(e) .. ' f=' .. tostring(f) .. ' g=' .. tostring(g))
     if d ~= nil then
         -- SC 7-param signature: a=opKey, b=success, c=difficulty, d=allPrimary, e=allSecondary, f=allBonus, g=factionNIS
         -- Add campaignID so FA's OperationVictory can process it
         local faction = SCCaToFaction(a)
+        LOG('  SC signature detected: opKey=' .. tostring(a) .. ' faction=' .. tostring(faction))
         Sync.OperationComplete = {
             opKey = a,
             success = b,
@@ -36,7 +39,9 @@ function EndOperation(a, b, c, d, e, f, g)
             factionVideo = g,
             campaignID = faction,
         }
+        LOG('  Sync.OperationComplete set: ' .. repr(Sync.OperationComplete))
     else
+        LOG('  FA signature detected: success=' .. tostring(a) .. ' allPrimary=' .. tostring(b) .. ' allSecondary=' .. tostring(c))
         -- FA 3-param signature: a=success, b=allPrimary, c=allSecondary
         baseEndOperation(a, b, c)
     end
