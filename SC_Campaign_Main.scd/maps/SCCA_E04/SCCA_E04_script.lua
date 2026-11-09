@@ -480,7 +480,15 @@ function StartMission2()
     #Overcharge manager
     local cdrPlatoon = ArmyBrains[ScenarioInfo.Cybran]:MakePlatoon(' ', ' ')
     ArmyBrains[ScenarioInfo.Cybran]:AssignUnitsToPlatoon( cdrPlatoon, {ScenarioInfo.CybranCDR}, 'Attack', 'AttackFormation' )
-    import('/lua/ai/AIBehaviors.lua').CDROverchargeBehavior(cdrPlatoon)
+    # FA removed CDROverchargeBehavior from AIBehaviors.lua; it still exists in OpBehaviors.lua.
+    # pcall: this is optional AI flavour only - it must never abort StartMission2 and
+    # leave the player without objectives.
+    pcall(function()
+        local SC_OpBehaviors = import('/lua/AI/OpAI/OpBehaviors.lua')
+        if SC_OpBehaviors and SC_OpBehaviors.CDROverchargeBehavior then
+            SC_OpBehaviors.CDROverchargeBehavior(cdrPlatoon)
+        end
+    end)
     ArmyBrains[ScenarioInfo.Cybran]:DisbandPlatoon(cdrPlatoon)
 
     #Outer defense

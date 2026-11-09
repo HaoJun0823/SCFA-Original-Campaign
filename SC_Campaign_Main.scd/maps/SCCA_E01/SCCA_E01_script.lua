@@ -866,7 +866,7 @@ end
 
 function CDRAI(platoon)
     platoon.PlatoonData.LocationType = 'Cybran_MainBase'
-    platoon:PatrolLocationFactoriesAI()
+    if SC_PatrolLocationFactoriesAI then SC_PatrolLocationFactoriesAI(platoon) end
 end
 
 function RDAlly()

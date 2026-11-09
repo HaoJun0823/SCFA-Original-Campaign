@@ -163,7 +163,7 @@ end
 
 function AikoAI(platoon)
     platoon.PlatoonData.LocationType = 'UEFBase'
-    platoon:PatrolLocationFactoriesAI()
+    if SC_PatrolLocationFactoriesAI then SC_PatrolLocationFactoriesAI(platoon) end
 end
 
 function SpawnUEFNaval()
@@ -260,7 +260,7 @@ end
 
 function ArnoldAI(platoon)
     platoon.PlatoonData.LocationType = 'AeonBase'
-    platoon:PatrolLocationFactoriesAI()
+    if SC_PatrolLocationFactoriesAI then SC_PatrolLocationFactoriesAI(platoon) end
 end
 
 function OnStart(self)

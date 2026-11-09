@@ -1,14 +1,3 @@
----
-AIGC:
-  ContentProducer: '001191110102MAD55U9H0F10002'
-  ContentPropagator: '001191110102MAD55U9H0F10002'
-  Label: '1'
-  ProduceID: '9f4be316-a369-4316-8e7d-c36d68ecb270'
-  PropagateID: '9f4be316-a369-4316-8e7d-c36d68ecb270'
-  ReservedCode1: 'a2cf161f-84ad-4e88-bd9d-e5406e288d8a'
-  ReservedCode2: 'a2cf161f-84ad-4e88-bd9d-e5406e288d8a'
----
-
 # SCFA — Original Campaign
 
 Bring the original **Supreme Commander (2007)** single-player campaign into

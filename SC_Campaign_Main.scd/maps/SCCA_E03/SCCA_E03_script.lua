@@ -138,7 +138,7 @@ end
 
 function CDRAI(platoon)
     platoon.PlatoonData.LocationType = 'AeonMainBase'
-    platoon:PatrolLocationFactoriesAI()
+    if SC_PatrolLocationFactoriesAI then SC_PatrolLocationFactoriesAI(platoon) end
 end
 
 # --------

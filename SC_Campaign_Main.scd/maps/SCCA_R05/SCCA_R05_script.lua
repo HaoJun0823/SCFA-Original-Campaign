@@ -1145,7 +1145,14 @@ function M3_CreateUnitsForMission()
     cdrPlatoon.CDRData.LeashPosition = 'UEF_Commander_Leash'
     cdrPlatoon.CDRData.LeashRadius = 34
     ArmyBrains[UEF]:AssignUnitsToPlatoon( cdrPlatoon, {ScenarioInfo.M3_UEFMainBase_Commander}, 'Attack', 'AttackFormation' )
-    import('/lua/ai/AIBehaviors.lua').CDROverchargeBehavior(cdrPlatoon)
+    # FA removed CDROverchargeBehavior from AIBehaviors.lua; it still exists in OpBehaviors.lua.
+    # pcall: optional AI flavour only, must never abort the mission script.
+    pcall(function()
+        local SC_OpBehaviors = import('/lua/AI/OpAI/OpBehaviors.lua')
+        if SC_OpBehaviors and SC_OpBehaviors.CDROverchargeBehavior then
+            SC_OpBehaviors.CDROverchargeBehavior(cdrPlatoon)
+        end
+    end)
     ArmyBrains[UEF]:DisbandPlatoon(cdrPlatoon)
 
      # - hard difficulty: air superiority patrols, aa patrols, a few engineers to guard CDR

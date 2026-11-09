@@ -4,6 +4,9 @@
 --*          falling through to FA's native NextOpBriefing / main menu logic.
 --*****************************************************************************
 
+-- Proof-of-life: earliest of our UI hooks to load at startup.
+LOG('[SC Campaign] HOOK ALIVE: schook/lua/ui/uimain.lua')
+
 -- Save original FA StartFrontEndUI
 local baseFAStartFrontEndUI = StartFrontEndUI
 

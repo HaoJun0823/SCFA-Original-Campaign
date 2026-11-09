@@ -3,6 +3,10 @@
 --* Summary: Hook OperationVictory + LaunchBriefing to route SC campaign ops
 --*****************************************************************************
 
+-- Proof-of-life: this runs while the front end is still loading (main menu),
+-- so seeing this line means our schook tree is the one the engine executed.
+LOG('[SC Campaign] HOOK ALIVE: schook/lua/ui/campaign/campaignmanager.lua')
+
 -- Save original FA OperationVictory
 local baseFAOperationVictory = OperationVictory
 local baseFALaunchBriefing = LaunchBriefing

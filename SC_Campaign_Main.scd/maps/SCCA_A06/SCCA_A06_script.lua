@@ -1077,7 +1077,7 @@ end
 
 function M3AeonCommanderAIThread( platoon )
     platoon.PlatoonData.LocationType = 'M3_Aeon_Base'
-    platoon:PatrolLocationFactoriesAI()
+    if SC_PatrolLocationFactoriesAI then SC_PatrolLocationFactoriesAI(platoon) end
 end
 
 function M3CommanderDefeated()

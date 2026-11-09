@@ -704,7 +704,7 @@ function CDRAINavy(platoon)
     ScenarioInfo.VarTable['ArnoldLand'] = false
     ScenarioInfo.VarTable['ArnoldMain'] = false
     platoon.PlatoonData.LocationType = 'UEFNavyBase'
-    platoon:PatrolLocationFactoriesAI()
+    if SC_PatrolLocationFactoriesAI then SC_PatrolLocationFactoriesAI(platoon) end
 end
 
 function ArnoldNavyVO()
@@ -762,7 +762,7 @@ function CDRAILand(platoon)
     ScenarioInfo.VarTable['ArnoldLand'] = true
     ScenarioInfo.VarTable['ArnoldMain'] = false
     platoon.PlatoonData.LocationType = 'UEFLandBase'
-    platoon:PatrolLocationFactoriesAI()
+    if SC_PatrolLocationFactoriesAI then SC_PatrolLocationFactoriesAI(platoon) end
 end
 
 function CDRAIAir(platoon)
@@ -771,7 +771,7 @@ function CDRAIAir(platoon)
     ScenarioInfo.VarTable['ArnoldLand'] = false
     ScenarioInfo.VarTable['ArnoldMain'] = false
     platoon.PlatoonData.LocationType = 'UEFAirBase'
-    platoon:PatrolLocationFactoriesAI()
+    if SC_PatrolLocationFactoriesAI then SC_PatrolLocationFactoriesAI(platoon) end
 end
 
 function ArnoldLandVO()
@@ -810,7 +810,7 @@ function CDRAIMain(platoon)
     ScenarioInfo.VarTable['ArnoldLand'] = false
     ScenarioInfo.VarTable['ArnoldMain'] = true
     platoon.PlatoonData.LocationType = 'UEFMainBase'
-    platoon:PatrolLocationFactoriesAI()
+    if SC_PatrolLocationFactoriesAI then SC_PatrolLocationFactoriesAI(platoon) end
 end
 
 function M2P1Reminder1()

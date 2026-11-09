@@ -966,7 +966,7 @@ end
 # Blake will do stuff to hinder things for the player, somehow
 function M2BlakeAIThread(platoon)
     platoon.PlatoonData.LocationType = 'WestBase'
-    platoon:PatrolLocationFactoriesAI()
+    if SC_PatrolLocationFactoriesAI then SC_PatrolLocationFactoriesAI(platoon) end
 end
 
 function M2ArtilleryDestroyed(result)
@@ -1135,7 +1135,7 @@ end
 
 function M3ArielAIThread(platoon)
     platoon.PlatoonData.LocationType = 'MainBase'
-    platoon:PatrolLocationFactoriesAI()
+    if SC_PatrolLocationFactoriesAI then SC_PatrolLocationFactoriesAI(platoon) end
 end
 
 function M3P1ObjectiveDialogue()

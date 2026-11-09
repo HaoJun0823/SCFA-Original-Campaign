@@ -1,0 +1,8 @@
+# 本地备份包（体积大，不随仓库分发）
+SC_Campaign_Main-*.zip
+
+# 编辑器/系统临时文件
+Thumbs.db
+desktop.ini
+*.swp
+*~

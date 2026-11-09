@@ -3,6 +3,9 @@
 --* Summary: Hook ButtonCampaign to show SC/FA campaign selection dialog
 --*****************************************************************************
 
+-- Proof-of-life: runs while the main menu is built.
+LOG('[SC Campaign] HOOK ALIVE: schook/lua/ui/menus/main.lua')
+
 -- FA main.lua defines ButtonCampaign as a global function inside CreateUI().
 -- schook appends this code at file scope after the base file.
 -- We can access globals set by CreateUI() (like ButtonCampaign itself),
