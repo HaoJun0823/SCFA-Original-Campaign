@@ -12,7 +12,6 @@ local baseFAOperationVictory = OperationVictory
 local baseFALaunchBriefing = LaunchBriefing
 
 function OperationVictory(ovTable, skipDialog)
-    LOG('=== schook campaignmanager.OperationVictory DEBUG ===')
     LOG('  ovTable.opKey=' .. tostring(ovTable and ovTable.opKey))
     LOG('  ovTable.success=' .. tostring(ovTable and ovTable.success))
     LOG('  ovTable.campaignID=' .. tostring(ovTable and ovTable.campaignID))
@@ -30,7 +29,6 @@ end
 -- Hook LaunchBriefing: intercept SC_HOLD placeholder (do nothing, let score
 -- screen survive) and route SCCA_ ops to SC's own LaunchOperation.
 function LaunchBriefing(nextOpData)
-    LOG('=== schook campaignmanager.LaunchBriefing DEBUG ===')
     if nextOpData then
         LOG('  nextOpData.opID=' .. tostring(nextOpData.opID))
         LOG('  nextOpData.campaignID=' .. tostring(nextOpData.campaignID))
